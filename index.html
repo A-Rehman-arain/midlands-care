@@ -23,6 +23,73 @@
       --page-pad: 72px;
       --section-y: 88px;
     }
+    /* NAVBAR */
+/* NAVBAR */
+.navbar{
+  display:none;
+}
+
+/* MOBILE ONLY */
+@media(max-width:768px){
+
+ .navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:16px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  z-index:99999;
+  background:#202E48;
+}
+
+  .hero-logo{
+    display:none;
+  }
+
+  .nav-logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:28px;
+    font-weight:700;
+  }
+
+  .menu-toggle{
+    display:block;
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:32px;
+    cursor:pointer;
+  }
+
+  .nav-menu{
+    position:absolute;
+    top:70px;
+    right:24px;
+    background:#202E48;
+    width:220px;
+    border-radius:12px;
+    padding:20px;
+    display:none;
+    flex-direction:column;
+    gap:16px;
+  }
+
+  .nav-menu.active{
+    display:flex;
+  }
+
+  .nav-menu a{
+    color:#fff;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:500;
+  }
+
+}
    @media(max-width:768px){
 
   html, body{
@@ -1571,6 +1638,44 @@
   </style>
 </head>
  <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+  const navbar = document.querySelector(".navbar");
+
+  // TOGGLE MENU
+  if(menuToggle && navMenu){
+
+    menuToggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      navMenu.classList.toggle("active");
+    });
+
+    // CLOSE WHEN CLICKING A LINK
+    const navLinks = navMenu.querySelectorAll("a");
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        navMenu.classList.remove("active");
+      });
+    });
+
+    // CLOSE WHEN CLICKING OUTSIDE
+    document.addEventListener("click", function (e) {
+
+      if(
+        !navMenu.contains(e.target) &&
+        !menuToggle.contains(e.target)
+      ){
+        navMenu.classList.remove("active");
+      }
+
+    });
+
+  }
+
+});
 function createAutoSlider(id, slideSelector) {
 
   if (window.innerWidth > 768) return;
@@ -1657,6 +1762,23 @@ window.addEventListener("load", () => {
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
+    <header class="navbar">
+
+  <a href="#" class="nav-logo">Midlands Care</a>
+
+  <button class="menu-toggle" id="menuToggle">
+    ☰
+  </button>
+
+  <nav class="nav-menu" id="navMenu">
+    <a href="#homes">View Our Homes</a>
+    <a href="#about">About</a>
+    <a href="#benefits">Benefits</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+</header>
     <div class="hero-overlay" aria-hidden="true"></div>
     <a href="#" class="hero-logo" aria-label="Midlands Care">Midlands Care</a>
     <div class="hero-content">
@@ -1704,7 +1826,7 @@ window.addEventListener("load", () => {
     </div>
 
     <!-- VIEW OUR HOMES -->
-    <section class="section bg-white section-center">
+    <section  id="homes" class="section bg-white section-center">
       <h2 class="sec-title">View Our Homes</h2>
       <div class="homes-layout">
         <div class="home-card">
@@ -1800,7 +1922,7 @@ window.addEventListener("load", () => {
     </section>
 
     <!-- ABOUT -->
-    <section class="section bg-cream">
+    <section id="about" class="section bg-cream">
       <h2 class="sec-title" style="text-align:center">Donec accumsan dapibus finibus</h2>
       <div class="about-wrap">
         <div class="about-row">
@@ -1903,7 +2025,7 @@ window.addEventListener("load", () => {
 
     <!-- BENEFITS -->
 
-    <section class="section bg-white section-center">
+    <section  id="benefits" class="section bg-white section-center">
       <h2 class="sec-title">Care Home Benefits</h2>
       <div class="ben-grid mobile-slider" id="benefitsSlider">
         <div class="mobile-slider-track">
@@ -1941,7 +2063,7 @@ window.addEventListener("load", () => {
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="section bg-cream section-center">
+    <section  id="testimonials" class="section bg-cream section-center">
       <h2 style="    font-family: Inter, sans-serif; " class="sec-title">Testimonials</h2>
       <div class="test-grid mobile-slider" id="testimonialsSlider">
         <div class="mobile-slider-track">
@@ -2104,7 +2226,7 @@ window.addEventListener("load", () => {
     </section>
 
     <!-- FAQ -->
-    <section class="section bg-white section-center">
+    <section  id="faq" class="section bg-white section-center">
       <h2 style="    font-family: Inter, sans-serif; " class="sec-title">Frequently Asked Questions</h2>
       <div class="faq-wrap">
         <div class="faq-item" onclick="this.classList.toggle('open')">
