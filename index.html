@@ -1,0 +1,2236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Midlands Care Group</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/brittany-signature" rel="stylesheet">
+  <style>
+
+    :root {
+      --navy: #202E48;
+      --navy-deep: #001833;
+      --gold: #FFCF6A;
+      --gold-dark: #C09757;
+      --cream: #F9F7F4;
+      --text: #2A2A2A;
+      --muted: #666666;
+      --card-w: 382px;
+      --page-pad: 72px;
+      --section-y: 88px;
+    }
+   @media(max-width:768px){
+
+  html, body{
+    overflow-x:hidden;
+    width:100%;
+  }
+
+  .mobile-slider{
+    width:100%;
+    overflow:hidden;
+  }
+
+  .mobile-slider-track{
+    display:flex;
+    width:100%;
+    gap:0 !important;
+  }
+
+  .mobile-slide,
+  .service-item,
+  .ben-card,
+  .test-card{
+    width:100% !important;
+    min-width:100% !important;
+    max-width:100% !important;
+    margin:0 !important;
+    flex-shrink:0;
+    box-sizing:border-box;
+  }
+
+}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+    /* REMOVE ALL SLIDER BUTTONS */
+.slider-arrow{
+  display:none !important;
+}
+
+/* MOBILE SLIDER */
+@media(max-width:768px){
+
+  .mobile-slider{
+    overflow:hidden;
+    width:100%;
+    position:relative;
+  }
+  .ben-grid,
+.test-grid{
+  padding:0 !important;
+  margin:0 !important;
+}
+
+   .mobile-slider-track{
+  display:flex !important;
+  flex-wrap:nowrap !important;
+  gap:0 !important;
+  width:max-content;
+  transition:transform .6s ease;
+} .mobile-slider{
+  overflow:hidden;
+  position:relative;
+  width:100%;
+}
+
+.mobile-slide{
+  
+  flex-shrink:0;
+}
+
+  /* ONE BOX AT A TIME */
+  .service-item,
+  .ben-card,
+  .test-card{
+    min-width:100% !important;
+    max-width:100% !important;
+    flex-shrink:0;
+  }
+
+  .svc-sep{
+    display:none !important;
+  }
+
+  .services-bar{
+    padding:0;
+  }
+
+  .test-grid,
+  .ben-grid{
+    gap:0 !important;
+  }
+}
+
+    @media(max-width:768px) {
+
+      /* desktop default */
+      .slider-arrow {
+        display: none;
+      }
+
+      /* mobile only */
+      @media(max-width:768px) {
+
+        .slider-arrow {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+      }
+
+      /* COMMON SLIDER */
+      .mobile-slider {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .mobile-slider-track {
+        display: flex;
+        transition: transform .5s ease;
+        will-change: transform;
+      }
+
+      .mobile-slider {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .mobile-slider-track {
+        display: flex;
+        width: 100%;
+        transition: transform .5s ease;
+      }
+
+      .mobile-slide {
+        min-width: 100%;
+        width: 100%;
+        flex-shrink: 0;
+      }
+
+      .mobile-slide {
+        min-width: 100%;
+        flex-shrink: 0;
+      }
+
+      /* arrows */
+      .slider-arrow {
+        display: none;
+      }
+
+      .slider-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.65);
+        color: #fff;
+        font-size: 20px;
+        z-index: 5;
+        cursor: pointer;
+      }
+
+      .slider-prev {
+        left: 10px;
+      }
+
+      .slider-next {
+        right: 10px;
+      }
+
+      /* SERVICES */
+      .services-bar {
+        display: block;
+        padding: 0;
+      }
+
+      .service-item {
+        width: 100%;
+        max-width: 100%;
+        padding: 28px 20px;
+      }
+
+      .svc-sep {
+        display: none;
+      }
+
+      /* BENEFITS */
+      .ben-grid {
+        flex-wrap: nowrap;
+        gap: 0;
+      }
+
+      .ben-card {
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      /* TESTIMONIALS */
+      .test-grid {
+        flex-wrap: nowrap;
+        gap: 0;
+      }
+
+      .test-card {
+        width: 100%;
+        max-width: 100%;
+      }
+
+    }
+
+    body {
+      font-family: Inter, sans-serif;
+      overflow-x: hidden;
+      background: #fff;
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6
+    }
+
+    .footer-single-image {
+      margin-top: 14px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .footer-single-image img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Playfair italic — section & display headings only */
+    .sec-title,
+    .hero h1,
+    .fam-content h2,
+    .pop-left h2,
+    .blog-card h3,
+    .foot-col h4 {
+      font-family: Inter, sans-serif;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    /* HERO — matches Figma banner (hero-banner.png has left gradient baked in) */
+    .hero {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 1;
+      background: #0a1628;
+      overflow: hidden;
+    }
+
+    .page-content {
+      position: relative;
+      z-index: 2;
+      margin-top: 100vh;
+      background: #fff;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('hero-banner.png') center right/cover no-repeat;
+      background-color: #0a1628;
+    }
+
+    /* hero-banner.png includes the navy left panel — overlay only softens the photo edge */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 0%, transparent 48%, rgba(0, 0, 0, 0.06) 100%);
+      pointer-events: none;
+    }
+
+    .hero-logo {
+      position: absolute;
+      top: 36px;
+      left: 50%;
+      transform: translateX(-620px);
+      z-index: 3;
+      font-family: 'Brittany Signature', cursive;
+      font-size: 40px;
+      color: var(--gold-dark);
+      line-height: 1;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1440px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 108px var(--page-pad) 64px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-inner {
+      max-width: 480px;
+      margin-left: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 5.2vw, 64px);
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 .line {
+      display: block
+    }
+
+    .hero h1 .gold {
+      color: var(--gold)
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      max-width: 380px;
+      font-weight: 400;
+    }
+
+    .hero .btn-gold {
+      font-size: 16px;
+      padding: 16px 40px;
+      border-radius: 4px;
+      font-weight: 600
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--text);
+      font-family: Inter, sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      padding: 18px 44px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      transition: background .25s, transform .2s, box-shadow .25s;
+      line-height: 1.2
+    }
+
+    .btn-gold:hover {
+      background: #f5c85a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 207, 106, 0.4)
+    }
+
+    .btn-gold:active {
+      transform: translateY(0);
+      box-shadow: none
+    }
+
+    /* SERVICES BAR — white strip directly under hero per Figma */
+    .services-bar {
+      width: 100%;
+      background: #fff;
+      padding: 34px var(--page-pad);
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 0;
+      flex-wrap: wrap
+    }
+
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 10px 36px;
+      flex: 1;
+      min-width: 280px;
+      max-width: 420px;
+      justify-content: flex-start
+    }
+
+    .svc-icon {
+      width: 76px;
+      height: 76px;
+      background: #fff;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .svc-icon img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain
+    }
+
+    .svc-text h4 {
+      color: var(--navy);
+      font-size: 17px;
+      margin-bottom: 5px;
+      line-height: 1.25;
+      font-family: Inter, sans-serif;
+      font-style: normal;
+      font-weight: 700
+    }
+
+    .svc-text p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+      max-width: 210px;
+      font-weight: 400
+    }
+
+    .svc-sep {
+      width: 1px;
+      background: #E3D6C3;
+      align-self: stretch;
+      margin: 6px 0;
+      flex-shrink: 0
+    }
+
+    /* SECTION BASE */
+    .section {
+      padding: var(--section-y) var(--page-pad)
+    }
+
+    .section-center {
+      text-align: center
+    }
+
+    .sec-title {
+      font-size: 46px;
+      color: var(--navy);
+      margin-bottom: 52px;
+      line-height: 1.12;
+      font-family: Inter, sans-serif;
+    }
+
+    .bg-white {
+      background: #fff
+    }
+
+    .bg-cream {
+      background: var(--cream)
+    }
+
+    /* HOME CARDS — 3 top + 2 bottom + featured image */
+    .homes-layout {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, var(--card-w)));
+      gap: 22px;
+      max-width: 1218px;
+      margin: 0 auto;
+      justify-content: center
+    }
+
+    .home-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .home-card-img-wrap {
+      position: relative;
+      height: 240px;
+      border-radius: 17px 17px 0 0;
+      overflow: visible;
+      background: #c8c8c8
+    }
+
+    .home-card-scene {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border-radius: 17px 17px 0 0
+    }
+
+    .home-card-body {
+      padding: 28px 22px 26px;
+      text-align: center;
+
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .home-card h3 {
+      color: var(--navy);
+      font-size: 20px;
+      margin-bottom: 10px;
+      line-height: 1.35;
+      font-family: Inter, sans-serif;
+      font-style: normal;
+      font-weight: 700
+    }
+
+    .home-location {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: var(--gold-dark);
+      font-size: 13px;
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-family: Inter, sans-serif
+    }
+
+    .home-divider {
+      width: 72px;
+      height: 2px;
+      background: var(--gold-dark);
+      margin: 10px auto 12px
+    }
+
+    .home-card p {
+      flex: 1;
+    }
+
+    .btn-callback {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 30px;
+      border-radius: 18px 4px 18px 4px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background .25s, transform .2s, box-shadow .25s;
+      font-family: Inter, sans-serif
+    }
+
+    .btn-callback:hover {
+      background: #f0be55;
+      color: white;
+
+
+    }
+
+    .homes-feature {
+      grid-column: 3;
+      grid-row: 2;
+      border-radius: 17px;
+      overflow: hidden;
+      position: relative;
+      min-height: 100%;
+      box-shadow: 7px 4px 16px rgba(0, 0, 0, 0.08);
+      border: 1px solid #E2E2E2;
+    }
+
+    .homes-feature>img:first-child {
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .homes-feature-logo {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      width: 340px;
+      height: auto;
+      z-index: 10;
+      height: auto !important;
+      min-height: auto !important;
+      object-fit: contain !important;
+
+
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+      filter:
+        brightness(0) invert(1) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+    }
+
+
+    /* ABOUT */
+    .about-wrap {
+      max-width: 1216px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 36px
+    }
+
+    .about-row {
+      display: flex;
+      align-items: stretch;
+      gap: 40px;
+      background: #fff;
+      border-radius: 17px;
+      padding: 40px;
+      box-shadow: 7px 4px 16px rgba(0, 0, 0, 0.04);
+      border: 1px solid #E2E2E2
+    }
+
+    .about-row.rev {
+      flex-direction: row-reverse
+    }
+
+    .about-row img {
+      width: 47.5%;
+      min-height: 400px;
+      border-radius: 14px;
+      object-fit: cover;
+      flex-shrink: 0
+    }
+
+    .about-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8px 4px
+    }
+
+    .about-text h3 {
+      color: var(--navy);
+      font-size: 26px;
+      margin-bottom: 12px;
+      line-height: 1.28;
+      font-family: Inter, sans-serif;
+      font-style: normal;
+      font-weight: 700
+    }
+
+    .about-sub {
+      color: var(--muted);
+      font-size: 17px;
+      font-style: italic;
+      font-weight: 600;
+      margin-bottom: 14px;
+      line-height: 1.5;
+      font-family: Inter, sans-serif
+    }
+
+    .about-text p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+      margin-bottom: 20px;
+      font-family: Inter, sans-serif;
+    }
+
+    .blist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px
+    }
+
+    .blist li {
+      color: var(--muted);
+      font-size: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.5
+    }
+
+    .bdot {
+      width: 9px;
+      height: 9px;
+      min-width: 9px;
+      margin-top: 7px;
+      background: var(--gold-dark);
+      border-radius: 50%
+    }
+
+    .about-cta {
+      text-align: center;
+      margin-top: 56px
+    }
+
+    .about-cta p {
+      max-width: 640px;
+      margin: 0 auto 24px;
+      color: var(--navy);
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1.55;
+      font-family: Inter, sans-serif
+    }
+
+    /* FAMILY BANNER */
+    .fam-banner {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+
+      background: #000;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+
+      z-index: 1;
+    }
+
+    .section,
+    .footer {
+      position: relative;
+      z-index: 2;
+      background: #fff;
+    }
+
+    .fam-bg {
+      position: absolute;
+      inset: 0;
+      background: url('image 3.png') center center/cover no-repeat
+    }
+
+    .fam-ov {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.75) 48%, rgba(0, 0, 0, 0.15) 100%)
+    }
+
+    .fam-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1440px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 72px var(--page-pad)
+    }
+
+    .fam-inner {
+      max-width: 560px
+    }
+
+    .fam-content h2 {
+      font-size: 44px;
+      color: #fff;
+      line-height: 1.22;
+      margin-bottom: 18px
+    }
+
+    .fam-content p {
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 20px
+    }
+
+    .fam-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 30px
+    }
+
+    .fam-list li {
+      color: #fff;
+      font-size: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.5
+    }
+
+    .btn-out {
+      display: inline-block;
+      border: 2px solid #fff;
+      color: #fff;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 13px 36px;
+      text-decoration: none;
+      font-family: Inter, sans-serif;
+      border-radius: 0;
+      transition: background .25s, color .25s, transform .2s
+    }
+
+    .btn-out:hover {
+      background: #fff;
+      color: var(--navy);
+      transform: translateY(-2px)
+    }
+
+    /* BENEFITS */
+    .ben-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    .ben-card {
+      width: 216px;
+      background: #fff;
+      border-radius: 17px;
+      padding: 28px 16px 24px;
+      margin: 8px;
+      text-align: center;
+      box-shadow: 7px 4px 16px rgba(0, 0, 0, 0.04);
+      border: 1px solid #E2E2E2
+    }
+
+    .ben-icon {
+      width: 88px;
+      height: 88px;
+      background: var(--gold-dark);
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .ben-icon img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      filter: brightness(0) invert(1)
+    }
+
+    .ben-card h4 {
+      color: var(--navy);
+      font-size: 15px;
+      margin-bottom: 10px;
+      line-height: 1.35;
+      font-family: Inter, sans-serif;
+      font-style: normal;
+      font-weight: 700
+    }
+
+    .ben-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55
+    }
+
+    /* TESTIMONIALS */
+    .test-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      max-width: 1270px;
+      margin: 0 auto
+    }
+
+    .test-card {
+      width: var(--card-w);
+        margin: 8px;
+      background: #fff;
+      border-radius: 14px;
+      padding: 26px 26px 28px;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
+      position: relative;
+      text-align: left
+    }
+
+    .test-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      padding-right: 28px
+    }
+
+    .test-av {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0
+    }
+
+    .test-name {
+      font-weight: 700;
+      color: var(--text);
+      font-size: 15px;
+      font-family: Inter, sans-serif
+    }
+
+    .test-date {
+      color: #757575;
+      font-size: 13px;
+      font-family: Inter, sans-serif
+    }
+
+    .stars {
+      color: #F9C316;
+      font-size: 17px;
+      margin-bottom: 12px;
+      letter-spacing: 1px
+    }
+
+    .test-text {
+      color: var(--text);
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.65;
+      font-family: Inter, sans-serif;
+    }
+
+    .g-icon {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 22px;
+      height: 22px
+    }
+
+    /* FAQ */
+    .faq-wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: left
+    }
+
+    .faq-item {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #E0E0E0;
+      padding: 24px 30px;
+      margin-bottom: 16px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.06);
+      cursor: pointer;
+      transition: box-shadow .2s
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 4px 28px rgba(0, 0, 0, 0.08)
+    }
+
+    .faq-q {
+      color: var(--navy);
+      font-size: 17px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      line-height: 1.45;
+      gap: 16px;
+      font-family: 'Inter Tight', sans-serif;
+      text-transform: none
+    }
+
+    .faq-arr {
+      transition: transform .3s;
+      color: #b0b0b0;
+      font-size: 12px;
+      flex-shrink: 0;
+      width: 18px;
+      text-align: center
+    }
+
+    .faq-a {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+      margin-top: 14px;
+      display: none
+    }
+
+    .faq-item.open .faq-a {
+      display: block
+    }
+
+    .faq-item.open .faq-arr {
+      transform: rotate(180deg);
+      display: inline-block
+    }
+
+    .faq-cta {
+      text-align: center;
+      margin-top: 44px
+    }
+
+    /* BLOG */
+    .blog-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      max-width: 1320px;
+      margin: 0 auto
+    }
+
+    .blog-card {
+      width: var(--card-w);
+      background: #fff;
+      border-radius: 17px;
+      overflow: hidden;
+      box-shadow: 7px 4px 16px rgba(0, 0, 0, 0.04);
+      border: 1px solid #E2E2E2
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 234px;
+      object-fit: cover;
+      display: block
+    }
+
+    .blog-card-body {
+      padding: 28px 24px 30px;
+      text-align: center
+    }
+
+    .blog-card h3 {
+      color: var(--navy);
+      font-size: 27px;
+      margin-bottom: 10px;
+      line-height: 1.35
+    }
+
+    .blog-div {
+      width: 80px;
+      height: 2px;
+      background: var(--gold-dark);
+      margin: 10px auto 14px
+    }
+
+    .blog-card p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 16px
+    }
+
+    .rm-link {
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 18px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Inter Tight', sans-serif
+    }
+
+    .rm-link:hover {
+      color: var(--gold-dark)
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--navy);
+      padding: 72px var(--page-pad) 28px
+    }
+
+    .foot-grid {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1216px;
+      margin: 0 auto;
+      gap: 48px;
+      justify-content: space-between;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 28px
+    }
+
+    .foot-col {
+      flex: 1;
+      min-width: 260px
+    }
+
+    .foot-col h4 {
+      color: #fff;
+      font-size: 21px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15)
+    }
+
+    .foot-col p,
+    .foot-col address {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 15px;
+      line-height: 1.85;
+      font-style: normal
+    }
+
+    .soc-icons {
+      display: flex;
+      gap: 14px;
+      margin-top: 24px
+    }
+
+    .soc-icon {
+      width: 42px;
+      height: 42px;
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer
+    }
+
+    .soc-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: #fff
+    }
+
+    .insta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-top: 10px
+    }
+
+    .insta-cell {
+      border-radius: 6px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      background: #2a3d5c
+    }
+
+    .insta-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .foot-bottom {
+      text-align: center;
+      color: #6E85B1;
+      font-size: 13px;
+      max-width: 1216px;
+      margin: 0 auto;
+      line-height: 1.7
+    }
+
+    /* POPUP */
+    .pop-ov {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 24px
+    }
+
+    .pop-ov.on {
+      display: flex
+    }
+
+    .pop-box {
+      background: #fff;
+      border-radius: 18px;
+      max-width: 940px;
+      width: 100%;
+      padding: 44px 48px 44px 44px;
+      display: flex;
+      gap: 40px;
+      align-items: stretch;
+      position: relative;
+      max-height: 92vh;
+      overflow-y: auto;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25)
+    }
+
+    .pop-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 22px;
+      cursor: pointer;
+      color: #888;
+      background: none;
+      border: none;
+      line-height: 1;
+      padding: 6px;
+      transition: color .2s
+    }
+
+    .pop-close:hover {
+      color: #333
+    }
+
+    .pop-left {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 8px
+    }
+
+    .pop-left h2 {
+      font-size: 44px;
+      line-height: 1.08;
+      margin-bottom: 16px;
+      color: var(--text);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 500
+    }
+
+    .pop-left h2 .gold {
+      color: var(--gold-dark);
+      font-size: 44px
+    }
+
+    .pop-left h2 .gold-lg {
+      color: var(--gold-dark);
+      font-size: 56px;
+      display: block;
+      line-height: 1.05;
+      margin-top: 2px
+    }
+
+    .pop-left>p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+      max-width: 340px
+    }
+
+    .pop-cta-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      margin-top: 28px;
+      flex-wrap: wrap
+    }
+
+    .pop-script {
+      font-family: 'Brittany Signature', cursive;
+      font-size: 44px;
+      color: var(--gold-dark);
+      line-height: 1;
+      font-weight: 400;
+      transform: rotate(-4deg);
+      display: inline-block;
+    }
+
+    .pop-arrow {
+      width: 72px;
+      height: 56px;
+      flex-shrink: 0;
+      margin-bottom: 4px;
+      opacity: 0.85
+    }
+
+    .pop-right {
+      flex: 0 0 340px;
+      background: var(--gold-dark);
+      border-radius: 16px;
+      padding: 28px 26px 26px
+    }
+
+    .pop-right>p {
+      color: #fff;
+      font-style: italic;
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 18px;
+      line-height: 1.55
+    }
+
+    .f-field {
+      background: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 13px 16px;
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-family: 'Inter Tight', sans-serif;
+      outline: none;
+      color: #333
+    }
+
+    .f-field::placeholder {
+      color: #999
+    }
+
+    .f-phone-wrap {
+      display: flex;
+      gap: 0;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff
+    }
+
+    .f-flag {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 12px;
+      background: #fff;
+      border: none;
+      border-right: 1px solid #eee;
+      font-size: 18px;
+      cursor: default;
+      flex-shrink: 0
+    }
+
+    .f-phone {
+      flex: 1;
+      border: none;
+      padding: 13px 14px;
+      font-size: 14px;
+      font-family: 'Inter Tight', sans-serif;
+      outline: none
+    }
+
+    .f-sel {
+      appearance: none;
+      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center;
+      cursor: pointer
+    }
+
+    .f-btn {
+      background: var(--gold);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 16px;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: 'Inter Tight', sans-serif;
+      margin-top: 6px;
+      transition: background .25s, transform .2s, box-shadow .25s
+    }
+
+    .f-btn:hover {
+      background: #f0be55;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15)
+    }
+
+    @media(max-width:1100px) {
+      :root {
+        --page-pad: 40px;
+        --section-y: 72px;
+        --card-w: 100%
+      }
+
+      .homes-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .homes-feature {
+        grid-column: 1/-1;
+        grid-row: auto
+      }
+
+      .homes-feature img {
+        min-height: 300px
+      }
+
+      .about-row,
+      .about-row.rev {
+        flex-direction: column
+      }
+
+      .about-row img {
+        width: 100%;
+        min-height: 260px
+      }
+    }
+
+    @media(max-width:900px) {
+      :root {
+        --page-pad: 24px;
+        --card-w: 100%
+      }
+
+      .hero {
+        height: auto;
+        min-height: 520px;
+        max-height: none
+      }
+
+      .hero h1 {
+        font-size: 40px
+      }
+
+      .hero-content {
+        padding: 88px var(--page-pad) 48px
+      }
+
+      .hero-logo {
+        font-size: 32px;
+        top: 24px
+      }
+
+      .services-bar {
+        flex-direction: column;
+        padding: 20px
+      }
+
+      .svc-sep {
+        width: 80%;
+        height: 1px;
+        margin: 0 auto
+      }
+
+      .service-item {
+        max-width: 100%;
+        padding: 16px 12px
+      }
+
+      .sec-title {
+        font-size: 34px;
+        margin-bottom: 36px;
+        font-family: Inter, sans-serif;
+      }
+
+      .fam-content h2 {
+        font-size: 32px
+      }
+
+      .homes-layout {
+        grid-template-columns: 1fr
+      }
+
+      .pop-box {
+        flex-direction: column;
+        padding: 32px 24px;
+        gap: 28px
+      }
+
+      .pop-right {
+        flex: 1 1 auto;
+        width: 100%
+      }
+
+      .footer {
+        padding: 50px var(--page-pad) 24px
+      }
+
+      .test-card,
+      .blog-card {
+        max-width: 420px
+      }
+    }
+
+    
+
+    .mobile-slider {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .mobile-slider-track {
+      display: flex;
+      width: 100%;
+    }
+
+    /* desktop */
+    .slider-arrow {
+      display: none;
+    }
+
+    /* mobile */
+    @media(max-width:768px) {
+      .mobile-slider-track {
+        gap: 0 !important;
+        transition: transform .5s ease;
+      }
+
+      .mobile-slide {
+        min-width: 100%;
+        width: 100%;
+        flex-shrink: 0;
+      }
+
+      .slider-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 100;
+      }
+
+      .slider-prev {
+        left: 10px;
+      }
+
+      .slider-next {
+        right: 10px;
+      }
+
+      .svc-sep {
+        display: none !important;
+      }
+    }
+
+    /* desktop normal layout */
+    @media(min-width:769px) {
+      #servicesSlider .mobile-slider-track {
+        justify-content: center;
+      }
+
+      #benefitsSlider .mobile-slider-track,
+      #testimonialsSlider .mobile-slider-track {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+ <script>
+function createAutoSlider(id, slideSelector) {
+
+  if (window.innerWidth > 768) return;
+
+  const slider = document.getElementById(id);
+  if (!slider) return;
+
+  const track = slider.querySelector(".mobile-slider-track");
+  const slides = slider.querySelectorAll(slideSelector);
+
+  if (!track || slides.length === 0) return;
+
+  let current = 0;
+
+  function moveSlider() {
+    track.style.transform = `translateX(-${current * 100}%)`;
+  }
+
+  function autoSlide() {
+    current++;
+
+    if (current >= slides.length) {
+      current = 0;
+    }
+
+    moveSlider();
+  }
+
+  moveSlider();
+
+  setInterval(autoSlide, 3000);
+}
+
+window.addEventListener("load", () => {
+
+  createAutoSlider("servicesSlider", ".service-item");
+
+  createAutoSlider("benefitsSlider", ".ben-card");
+
+  createAutoSlider("testimonialsSlider", ".test-card");
+
+});
+</script>
+
+<body>
+
+  <!-- POPUP -->
+  <div class="pop-ov" id="pop" onclick="if(event.target===this)this.classList.remove('on')">
+    <div class="pop-box">
+      <button class="pop-close" type="button" onclick="document.getElementById('pop').classList.remove('on')"
+        aria-label="Close">✕</button>
+      <div class="pop-left">
+        <h2>Exceptional Care Homes <span class="gold line">Across the</span><span
+            class="gold gold-lg line">Midlands</span></h2>
+        <p>Warm, compassionate, and professional residential care tailored to every resident.</p>
+        <div class="pop-cta-row">
+          <span class="pop-script">Fill The Form</span>
+          <svg class="pop-arrow" viewBox="0 0 80 56" fill="none" aria-hidden="true">
+            <path d="M4 48 C28 8, 52 4, 76 8" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" />
+            <path d="M66 4 L76 10 L68 18" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+      <div class="pop-right">
+        <p>Please share your contact details so we can get back to you for any assistance you may need.</p>
+        <input type="text" placeholder="Name" class="f-field">
+        <div class="f-phone-wrap">
+          <span class="f-flag" aria-hidden="true">🇬🇧</span>
+          <input type="tel" placeholder="Phone" class="f-phone">
+        </div>
+        <input type="email" placeholder="Email" class="f-field">
+        <select class="f-field f-sel">
+          <option value="">Best Time To Call</option>
+          <option>Morning (9am–12pm)</option>
+          <option>Afternoon (12pm–5pm)</option>
+          <option>Evening (5pm–8pm)</option>
+        </select>
+        <button class="f-btn" type="button">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <a href="#" class="hero-logo" aria-label="Midlands Care">Midlands Care</a>
+    <div class="hero-content">
+      <div class="hero-inner">
+        <h1>
+          <span class="line">Exceptional</span>
+          <span class="line">Care Homes</span>
+          <span class="line gold">Across the</span>
+          <span class="line gold">Midlands</span>
+        </h1>
+        <p>Warm, compassionate, and professional residential care tailored to every resident.</p>
+        <button class="btn-gold" type="button" onclick="document.getElementById('pop').classList.add('on')">Request A
+          Callback</button>
+      </div>
+    </div>
+  </section>
+  <div class="page-content">
+    <!-- SERVICES BAR -->
+    <div class="services-bar mobile-slider" id="servicesSlider">
+      <div class="mobile-slider-track">
+        <div class="service-item">
+          <div class="svc-icon"><img src="Layer_1.png" alt=""></div>
+          <div class="svc-text">
+            <h4>Residential Care Homes</h4>
+            <p>Comfortable, safe, and homely environments with 24/7 compassionate care and support.</p>
+          </div>
+        </div>
+        <div class="svc-sep" aria-hidden="true"></div>
+        <div class="service-item">
+          <div class="svc-icon"><img src="Vector (1).png" alt=""></div>
+          <div class="svc-text">
+            <h4>Dementia Support</h4>
+            <p>Specialist dementia care in calm, supportive environments delivered by highly trained teams.</p>
+          </div>
+        </div>
+        <div class="svc-sep" aria-hidden="true"></div>
+        <div class="service-item">
+          <div class="svc-icon"><img src="L3nwGa.tif.png" alt=""></div>
+          <div class="svc-text">
+            <h4>Respite Care</h4>
+            <p>Short-term stays with the same high standards of care and a warm, welcoming environment.</p>
+          </div>
+        </div>
+      </div> <button class="slider-arrow slider-prev">‹</button> <button class="slider-arrow slider-next">›</button>
+    </div>
+
+    <!-- VIEW OUR HOMES -->
+    <section class="section bg-white section-center">
+      <h2 class="sec-title">View Our Homes</h2>
+      <div class="homes-layout">
+        <div class="home-card">
+          <div class="home-card-img-wrap">
+            <img class="home-card-scene" src="Rectangle 11.png" alt="Long Lea care home">
+          </div>
+          <div class="home-card-body">
+            <h3>Long Lea - Care Home Nuneaton</h3>
+            <div class="home-location"><svg width="12" height="16" viewBox="0 0 16 21" fill="#C09757"
+                aria-hidden="true">
+                <path
+                  d="M8 0C4.13 0 1 3.13 1 7c0 5.25 7 14 7 14s7-8.75 7-14c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S6.62 4.5 8 4.5 10.5 5.62 10.5 7 9.38 9.5 8 9.5z" />
+              </svg> Nuneaton (Hinckley Border), CV11 6JG</div>
+            <div class="home-divider"></div>
+            <p>A beautiful home offering residential care in a warm and welcoming environment.</p>
+            <button class="btn-callback" type="button"
+              onclick="document.getElementById('pop').classList.add('on')">Request A Callback</button>
+          </div>
+        </div>
+        <div class="home-card">
+          <div class="home-card-img-wrap">
+            <img class="home-card-scene" src="Rectangle 11 (1).png" alt="Parkhouse Grange care home">
+          </div>
+          <div class="home-card-body">
+            <h3>Parkhouse Grange - Care Home Leicestershire</h3>
+            <div class="home-location"><svg width="12" height="16" viewBox="0 0 16 21" fill="#C09757"
+                aria-hidden="true">
+                <path
+                  d="M8 0C4.13 0 1 3.13 1 7c0 5.25 7 14 7 14s7-8.75 7-14c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S6.62 4.5 8 4.5 10.5 5.62 10.5 7 9.38 9.5 8 9.5z" />
+              </svg> Earl Shilton, Leicestershire, LE9 7EP</div>
+            <div class="home-divider"></div>
+            <p>Modern facilities and compassionate care in the heart of Leicester.</p>
+            <button class="btn-callback" type="button"
+              onclick="document.getElementById('pop').classList.add('on')">Request A Callback</button>
+          </div>
+        </div>
+        <div class="home-card">
+          <div class="home-card-img-wrap">
+            <img class="home-card-scene" src="Rectangle 11 (2).png" alt="Linden Lodge Nursing Home">
+          </div>
+          <div class="home-card-body">
+            <h3>Linden Lodge Nursing Home</h3>
+            <div class="home-location"><svg width="12" height="16" viewBox="0 0 16 21" fill="#C09757"
+                aria-hidden="true">
+                <path
+                  d="M8 0C4.13 0 1 3.13 1 7c0 5.25 7 14 7 14s7-8.75 7-14c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S6.62 4.5 8 4.5 10.5 5.62 10.5 7 9.38 9.5 8 9.5z" />
+              </svg> Warton, Tamworth</div>
+            <div class="home-divider"></div>
+            <p>A serene setting close to Polesworth, perfect for nursing and Dementia care.</p>
+            <button class="btn-callback" type="button"
+              onclick="document.getElementById('pop').classList.add('on')">Request A Callback</button>
+          </div>
+        </div>
+        <div class="home-card">
+          <div class="home-card-img-wrap">
+            <img class="home-card-scene" src="Rectangle 11 (3).png" alt="Linden Grange Residential Home">
+          </div>
+          <div class="home-card-body">
+            <h3>Linden Grange Residential Home</h3>
+            <div class="home-location"><svg width="12" height="16" viewBox="0 0 16 21" fill="#C09757"
+                aria-hidden="true">
+                <path
+                  d="M8 0C4.13 0 1 3.13 1 7c0 5.25 7 14 7 14s7-8.75 7-14c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S6.62 4.5 8 4.5 10.5 5.62 10.5 7 9.38 9.5 8 9.5z" />
+              </svg> Hartshill, Nuneaton</div>
+            <div class="home-divider"></div>
+            <p>Quality Residential Care and care for those living with Dementia near Coventry.</p>
+            <button class="btn-callback" type="button"
+              onclick="document.getElementById('pop').classList.add('on')">Request A Callback</button>
+          </div>
+        </div>
+        <div class="home-card">
+          <div class="home-card-img-wrap">
+            <img class="home-card-scene" src="Rectangle 11 (4).png" alt="Linden Lodge Residential Home">
+          </div>
+          <div class="home-card-body">
+            <h3>Linden Lodge Residential Home</h3>
+            <div class="home-location"><svg width="12" height="16" viewBox="0 0 16 21" fill="#C09757"
+                aria-hidden="true">
+                <path
+                  d="M8 0C4.13 0 1 3.13 1 7c0 5.25 7 14 7 14s7-8.75 7-14c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S6.62 4.5 8 4.5 10.5 5.62 10.5 7 9.38 9.5 8 9.5z" />
+              </svg> Dordon, Tamworth</div>
+            <div class="home-divider"></div>
+            <p>Comfortable residential care near Tamworth with a true home-like feel.</p>
+            <button class="btn-callback" type="button"
+              onclick="document.getElementById('pop').classList.add('on')">Request A Callback</button>
+          </div>
+        </div>
+        <div class="homes-feature">
+          <img src="image2.png" alt="Midlands Care — compassionate care">
+          <img class="homes-feature-logo" src="image 1 (1).png" alt="Midlands Care Logo">
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section bg-cream">
+      <h2 class="sec-title" style="text-align:center">Donec accumsan dapibus finibus</h2>
+      <div class="about-wrap">
+        <div class="about-row">
+          <img src="Rectangle 14.png" alt="Midlands Care team providing support">
+          <div class="about-text">
+            <h3>Pellentesque vulputate felis volutpat viverra magna Nunc nisi mauris</h3>
+            <p class="about-sub">Pellentesque vulputate felis volutpat, viverra magna in, euismod ligula. In augue nibh,
+              molestie eu facilisis Sed est nulla</p>
+            <p>Quisque viverra imperdiet est, ac pellentesque lectus consectetur non. Donec pharetra blandit urna sed
+              maximus. Aliquam erat volutpat. Suspendisse non pellentesque massa, sit amet porta nisi. Sed imperdiet
+              velit eget metus rutrum luctus.</p>
+            <ul class="blist">
+              <li><span class="bdot"></span>Pellentesque habitant morbi tristique senectus</li>
+              <li><span class="bdot"></span>Cras nibh nisi, rhoncus et nibh non, tristique tristique</li>
+              <li><span class="bdot"></span>Ut scelerisque lectus ac augue vulputate</li>
+              <li><span class="bdot"></span>Quisque imperdiet volutpat sodales. Aenean interdum</li>
+              <li><span class="bdot"></span>Proin scelerisque mi et pellentesque bibendum</li>
+            </ul>
+          </div>
+        </div>
+        <div class="about-row rev">
+          <img src="Rectangle 14 (1).png" alt="Residents enjoying activities">
+          <div class="about-text">
+            <h3>Ut eget fermentum libero. Curabitur pretium mauris</h3>
+            <p class="about-sub">Pellentesque vulputate felis volutpat, viverra magna in, euismod ligula. In augue nibh,
+              molestie eu facilisis Sed est nulla</p>
+            <p>Quisque viverra imperdiet est, ac pellentesque lectus consectetur non. Donec pharetra blandit urna sed
+              maximus. Aliquam erat volutpat. Suspendisse non pellentesque massa, sit amet porta nisi.</p>
+            <ul class="blist">
+              <li><span class="bdot"></span>Pellentesque habitant morbi tristique senectus</li>
+              <li><span class="bdot"></span>Cras nibh nisi, rhoncus et nibh non, tristique tristique</li>
+              <li><span class="bdot"></span>Ut scelerisque lectus ac augue vulputate</li>
+              <li><span class="bdot"></span>Quisque imperdiet volutpat sodales. Aenean interdum</li>
+              <li><span class="bdot"></span>Proin scelerisque mi et pellentesque bibendum</li>
+            </ul>
+          </div>
+        </div>
+        <div class="about-row">
+          <img src="Rectangle 14 (2).png" alt="Care home dining">
+          <div class="about-text">
+            <h3>Donec lobortis quis leo vel scelerisque. Ut aliquet sit amet ex</h3>
+            <p class="about-sub">Pellentesque vulputate felis volutpat, viverra magna in, euismod ligula. In augue nibh,
+              molestie eu facilisis Sed est nulla</p>
+            <p>Quisque viverra imperdiet est, ac pellentesque lectus consectetur non. Donec pharetra blandit urna sed
+              maximus. Aliquam erat volutpat.</p>
+            <ul class="blist">
+              <li><span class="bdot"></span>Pellentesque habitant morbi tristique senectus</li>
+              <li><span class="bdot"></span>Cras nibh nisi, rhoncus et nibh non, tristique tristique</li>
+              <li><span class="bdot"></span>Ut scelerisque lectus ac augue vulputate</li>
+              <li><span class="bdot"></span>Quisque imperdiet volutpat sodales. Aenean interdum</li>
+              <li><span class="bdot"></span>Proin scelerisque mi et pellentesque bibendum</li>
+            </ul>
+          </div>
+        </div>
+        <div class="about-row rev">
+          <img src="Rectangle 14 (3).png" alt="Compassionate care">
+          <div class="about-text">
+            <h3>Phasellus condimentum ac orci sed sodales. Ut gravida lobortis neque</h3>
+            <p class="about-sub">Pellentesque vulputate felis volutpat, viverra magna in, euismod ligula. In augue nibh,
+              molestie eu facilisis Sed est nulla</p>
+            <p>Quisque viverra imperdiet est, ac pellentesque lectus consectetur non. Donec pharetra blandit urna sed
+              maximus. Aliquam erat volutpat.</p>
+            <ul class="blist">
+              <li><span class="bdot"></span>Pellentesque habitant morbi tristique senectus</li>
+              <li><span class="bdot"></span>Cras nibh nisi, rhoncus et nibh non, tristique tristique</li>
+              <li><span class="bdot"></span>Ut scelerisque lectus ac augue vulputate</li>
+              <li><span class="bdot"></span>Quisque imperdiet volutpat sodales. Aenean interdum</li>
+              <li><span class="bdot"></span>Proin scelerisque mi et pellentesque bibendum</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="about-cta">
+        <p>Sed quis condimentum purus, id volutpat ex. Nam ac nisi in mi accumsan vulputate. Praesent sollicitudin sed
+          justo sit amet tincidunt.</p>
+        <button class="btn-gold" type="button" onclick="document.getElementById('pop').classList.add('on')">Request A
+          Callback</button>
+      </div>
+    </section>
+
+    <!-- FAMILY BANNER -->
+    <div class="fam-banner">
+      <div class="fam-bg" aria-hidden="true"></div>
+      <div class="fam-ov" aria-hidden="true"></div>
+      <div class="fam-content">
+        <div class="fam-inner">
+          <h2 style="    font-family: Inter, sans-serif; ">We are part of the Midlands Care Group family.</h2>
+          <p>Pellentesque vulputate felis volutpat, viverra magna in, euismod ligula. In augue nibh, molestie eu
+            facilisis Sed est nulla</p>
+          <ul class="fam-list">
+            <li><span class="bdot"></span>Pellentesque habitant morbi tristique senectus</li>
+            <li><span class="bdot"></span>Cras nibh nisi, rhoncus et nibh non, tristique tristique</li>
+            <li><span class="bdot"></span>Ut scelerisque lectus ac augue vulputate</li>
+            <li><span class="bdot"></span>Proin scelerisque mi et pellentesque bibendum</li>
+          </ul>
+          <a href="https://midlandscare.co.uk" class="btn-out">Visit our main website</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BENEFITS -->
+
+    <section class="section bg-white section-center">
+      <h2 class="sec-title">Care Home Benefits</h2>
+      <div class="ben-grid mobile-slider" id="benefitsSlider">
+        <div class="mobile-slider-track">
+          <div class="ben-card">
+            <div class="ben-icon"><img src="Vector (2).png" alt=""></div>
+            <h4>24/7 Professional Care</h4>
+            <p>Round-the-clock support from experienced and dedicated care staff.</p>
+          </div>
+          <div class="ben-card">
+            <div class="ben-icon"><img src="PZTHKM.tif.png" alt=""></div>
+            <h4>Comfortable Living Spaces</h4>
+            <p>Beautifully designed homes created with comfort and dignity in mind.</p>
+          </div>
+          <div class="ben-card">
+            <div class="ben-icon"><img src="R1rvFU.tif.png" alt=""></div>
+            <h4>Nutritious Home-Cooked Meals</h4>
+            <p>Fresh, balanced meals tailored to dietary needs and preferences.</p>
+          </div>
+          <div class="ben-card">
+            <div class="ben-icon"><img src="2SQ6qG.tif.png" alt=""></div>
+            <h4>Daily Activities</h4>
+            <p>A variety of activities to promote wellbeing and social engagement.</p>
+          </div>
+          <div class="ben-card">
+            <div class="ben-icon"><img src="Layer_1 (1).png" alt=""></div>
+            <h4>Experienced Team</h4>
+            <p>Highly trained professionals dedicated to providing exceptional care.</p>
+          </div>
+        </div>
+        <button class="slider-arrow slider-prev">‹</button>
+        <button class="slider-arrow slider-next">›</button>
+      </div>
+
+
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section bg-cream section-center">
+      <h2 style="    font-family: Inter, sans-serif; " class="sec-title">Testimonials</h2>
+      <div class="test-grid mobile-slider" id="testimonialsSlider">
+        <div class="mobile-slider-track">
+          <div class="test-card">
+            <svg class="g-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+            <div class="test-header"><img class="test-av" src="image 9.png" alt="">
+              <div>
+                <div class="test-name">Michele Rose</div>
+                <div class="test-date">1 year ago</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="test-text">Donec lobortis quis leo vel scelerisque. Ut aliquet sit amet ex et eleifend. Quisque
+              porta rhoncus nibh, et euismod odio venenatis id. In hac habitasse platea dictumst.</p>
+          </div>
+          <div class="test-card">
+            <svg class="g-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+            <div class="test-header"><img class="test-av" src="image 9 (1).png" alt="">
+              <div>
+                <div class="test-name">Mark M.</div>
+                <div class="test-date">1 year ago</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="test-text">Donec lobortis quis leo vel scelerisque. Ut aliquet sit amet ex et eleifend. Quisque
+              porta rhoncus nibh, et euismod odio venenatis id. In hac habitasse platea dictumst.</p>
+          </div>
+          <div class="test-card">
+            <svg class="g-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+            <div class="test-header"><img class="test-av" src="image 9 (2).png" alt="">
+              <div>
+                <div class="test-name">Amelia V.</div>
+                <div class="test-date">1 year ago</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="test-text">Donec lobortis quis leo vel scelerisque. Ut aliquet sit amet ex et eleifend. Quisque
+              porta rhoncus nibh, et euismod odio venenatis id. In hac habitasse platea dictumst.</p>
+          </div>
+          <div class="test-card">
+            <svg class="g-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+            <div class="test-header"><img class="test-av" src="image 9 (3).png" alt="">
+              <div>
+                <div class="test-name">Nathan R.</div>
+                <div class="test-date">1 year ago</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="test-text">Donec lobortis quis leo vel scelerisque. Ut aliquet sit amet ex et eleifend. Quisque
+              porta rhoncus nibh, et euismod odio venenatis id. In hac habitasse platea dictumst.</p>
+          </div>
+          <div class="test-card">
+            <svg class="g-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+            <div class="test-header"><img class="test-av" src="image 9 (4).png" alt="">
+              <div>
+                <div class="test-name">John Doe</div>
+                <div class="test-date">1 year ago</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="test-text">Donec lobortis quis leo vel scelerisque. Ut aliquet sit amet ex et eleifend. Quisque
+              porta rhoncus nibh, et euismod odio venenatis id. In hac habitasse platea dictumst.</p>
+          </div>
+          <div class="test-card">
+            <svg class="g-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+            <div class="test-header"><img class="test-av" src="image 9.png" alt="">
+              <div>
+                <div class="test-name">Jane Doe</div>
+                <div class="test-date">1 year ago</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="test-text">Donec lobortis quis leo vel scelerisque. Ut aliquet sit amet ex et eleifend. Quisque
+              porta rhoncus nibh, et euismod odio venenatis id. In hac habitasse platea dictumst.</p>
+          </div>
+        </div>
+
+        <button class="slider-arrow slider-prev">‹</button>
+        <button class="slider-arrow slider-next">›</button>
+      </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="section bg-white section-center">
+      <h2 style="    font-family: Inter, sans-serif; " class="sec-title">Frequently Asked Questions</h2>
+      <div class="faq-wrap">
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div style="    font-family: Inter, sans-serif; " class="faq-q">Cras fringilla dolor magna, sit amet sagittis
+            leo ornare sed? <span class="faq-arr">▾</span></div>
+          <div class="faq-a">We provide day care, residential care, respite care, dementia care, and nursing care
+            services tailored to each resident.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div style="    font-family: Inter, sans-serif; " class="faq-q">Aliquam erat volutpat. Suspendisse non
+            pellentesque massa? <span class="faq-arr">▾</span></div>
+          <div class="faq-a">Yes, we offer free care assessments. Please contact us to arrange a visit at a time that
+            suits you.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div style="    font-family: Inter, sans-serif; " class="faq-q">Pellentesque habitant morbi tristique
+            senectus? <span class="faq-arr">▾</span></div>
+          <div class="faq-a">Absolutely. Every resident has an individual care plan tailored to their specific needs and
+            preferences.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div style="    font-family: Inter, sans-serif; " class="faq-q">Cras nibh nisi, rhoncus et nibh non, tristique
+            tristique dui. Vivamus lacus tortor? <span class="faq-arr">▾</span></div>
+          <div class="faq-a">We recommend visiting our homes, speaking with staff, and reviewing our CQC ratings to make
+            an informed decision.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div style="    font-family: Inter, sans-serif; " class="faq-q">Sed imperdiet velit eget metus rutrum luctus?
+            <span class="faq-arr">▾</span>
+          </div>
+          <div class="faq-a">We offer a wide range of daily activities including arts, music, gentle exercise, and
+            social events.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div style="    font-family: Inter, sans-serif; " class="faq-q">Vivamus tempor elementum ligula ut ornare?
+            <span class="faq-arr">▾</span>
+          </div>
+          <div class="faq-a">Families are encouraged to visit, participate in care planning, and communicate regularly
+            with our care teams.</div>
+        </div>
+      </div>
+      <div class="faq-cta"><a href="https://midlandscare.co.uk" class="btn-gold">Read More</a></div>
+    </section>
+
+    <!-- BLOG -->
+    <section class="section bg-cream section-center">
+      <h2 style="    font-family: Inter, sans-serif;  " class="sec-title">Latest News</h2>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <img src="Rectangle 11 (5).png" alt="Latest news">
+          <div class="blog-card-body">
+            <h3 style="    font-family: Inter, sans-serif; ">Proin scelerisque mi et pellentesque bibendum</h3>
+            <div class="blog-div"></div>
+            <p>Suspendisse potenti. Donec quis lacus id ante feugiat viverra a posuere tellus. Sed imperdiet velit</p><a
+              href="#" class="rm-link">Read More →</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <img src="Rectangle 11 (6).png" alt="Latest news">
+          <div class="blog-card-body">
+            <h3 style="    font-family: Inter, sans-serif; ">Donec tincidunt orci at libero bibendum hendrerit</h3>
+            <div class="blog-div"></div>
+            <p>Fusce at erat tristique, vestibulum nisl vel, elementum nisi. Suspendisse elementum elit at tortor</p><a
+              href="#" class="rm-link">Read More →</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <img src="Rectangle 11 (7).png" alt="Latest news">
+          <div class="blog-card-body">
+            <h3 style="    font-family: Inter, sans-serif; ">Vivamus tempor elementum ligula ut ornare</h3>
+            <div class="blog-div"></div>
+            <p>Aliquam erat volutpat. Duis in semper neque, at dictum velit. Curabitur dictum lectus arcu</p><a href="#"
+              class="rm-link">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+      <div class="foot-grid">
+        <div class="foot-col">
+          <h4 style="    font-family: Inter, sans-serif; font-size:24px;">Give Feedback on Care</h4>
+          <p style="    font-family: Inter, sans-serif; color:white;">We want to hear from you about a good or bad
+            experience you've had with us. Help us continuously improve our services towards Care, Colleagues and the
+            Community.</p>
+          <br>
+          <button class="btn-gold" style="font-size:16px;padding:15px 28px" type="button"
+            onclick="document.getElementById('pop').classList.add('on')">Give Feedback Anonymously</button>
+          <div class="soc-icons">
+            <div class="soc-icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg></div>
+            <div class="soc-icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+              </svg></div>
+            <div class="soc-icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                <circle cx="4" cy="4" r="2" />
+              </svg></div>
+            <div class="soc-icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg></div>
+          </div>
+        </div>
+        <div class="foot-col">
+          <h4 style="    font-family: Inter, sans-serif; font-size:24px;">Head Office</h4>
+          <address style="    font-family: Inter, sans-serif; color:white;">Midlands Care<br>8 Grove Court<br>Grove
+            Park, Enderby<br>Leicestershire LE19 1SA<br><br>Tel: 0116 296 7744</address>
+        </div>
+        <div class="foot-col">
+          <h4 style="    font-family: Inter, sans-serif; font-size:24px;">Follow us on Instagram</h4>
+
+          <div class="footer-single-image">
+            <img src="./Screenshot 2026-05-22 at 11.59.35 AM 1.png" alt="Midlands Care">
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">Copyright &copy; 2026 Midlands Care is an affiliation of several entities and is a
+        trading organisation which represents individual member care homes for marketing purposes.</div>
+    </footer>
+  </div>
+
+</body>
+
+</html>
