@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Details</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .hero {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .date {
+            color: #777;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 25px;
+            line-height: 1.3;
+            text-align: center;
+        }
+        h3 {
+            font-size: 36px;
+            margin-bottom: 25px;
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 30px;
+            background: #FFCF6A;
+            color: black;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: .3s;
+            /* text-align: center; */
+        }
+
+        .back-btn:hover {
+            background: #004ecc;
+        }
+
+        @media(max-width:992px) {
+            .hero {
+                height: 350px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+        }
+
+        @media(max-width:768px) {
+            .hero {
+                height: 280px;
+            }
+
+            .container {
+                margin: 40px auto;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        @media(max-width:576px) {
+            .hero {
+                height: 220px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+
+            .back-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <img id="blogImage" src="" alt="Blog Image">
+    </section>
+
+    <section class="container">
+
+        <div class="date" id="blogDate"></div>
+
+        <h1 id="blogTitle"></h1>
+
+        <div id="blogContent"></div>
+
+        <a href="index.html" class="back-btn">
+            ← Back To Home
+        </a>
+
+    </section>
+
+    <script>
+        const blogs = {
+
+            1: {
+                title: "Dementia Care Mapping Success",
+                date: "30 May 2026",
+                image: "./1stblog.png",
+                content: `
+                <p>At Midlands Care, we are proud to be going the extra mile in offering specialist Dementia Care Mapping (DCM) to our residents. As you may have seen in our recent social media posts, DCM is the practice of taking an evidence-based approach towards Dementia care, by aiming to better understand an individual and their quirks through covert observation, including movements and interactions. In turn, the team are able to uncover important information about the individual’s likes, dislikes and triggers, in order to improve and further personalise the care that they receive. DCM has the potential to uncover and assist in achieving amazing things for our residents and we can see evidence of this already in the mapping that has been completed so far. Today, we look to share just one success story, of how this practice has helped one individual truly live his best life! </p>
+                <h3>Stage 1: Meet The Resident </h3>
+
+                <p>The goal of this mapping session was to gain a better understanding of the motivations behind this resident’s actions and be able to give the home staff team more tools to support him in daily life. The day began with this in mind, as our mapper aimed to casually observe our resident, by remaining close by throughout the day and making notes in the process. </p>
+                <h3>Stage 2: Observation  </h3>
+
+                <p>Just as anticipated, our mapper noted that this resident spent great portions of time looking for things to do, but seemingly showing no signs of distress. It was also noted that this resident showed a very high level of intense focus. Engaging in very purposeful activities. Spending a large amount of time in the dining area, making carving motions with cutlery and carefully tracing a napkin edge with a knife. These movements, that could appear nonsensical and frustrating to the average rushed outside observer, on reflection were a window into understanding him better.</p>
+                 <h3>Stage 3: Making Changes  </h3>
+
+                <p>More focus on the activity co-ordinators contribution here maybe , proactive, her passion for person centred care, being the one who worked closely with him to put action plan into practice, couldn’t have been achieved without her collaboration <br>
+
+Following collaboration with the home and next of kin of this resident, it was discovered that these movements closely aligned with those he had undertaken in his life long occupation. Actions of muscle memory and intent. Our mapper from here was able to make suggestions, to translate these findings into actionable projects. From here the activity coordinator took over, showing proactive passion for the person-centered care she offers, she worked closely with both the mapper and resident to put a plan into practice. Things such as finding ‘cutting or scoring’ alternatives, providing templates and rulers as well as work feedback materials, to allow better gratification in his work and higher satisfaction in the outcome. </p>
+
+<h3>Stage 4: Outcome </h3>
+<p>The coordinator ran her specialised activity with play dough and a small tool. Something which allowed for satisfying results in a safe way. The resident appeared to be completely immersed and engaged, talking about what he was doing and the technicalities of the process. The home also planned in a reminiscent activity, searching up images of the resident’s occupation and encouraging him to tell stories from the past. Something which appeared to fill him with joy and immense satisfaction, that carried into the rest of their day. Making a massive difference to his overall mood and zest for life! </p>
+<h3>Summary</h3>
+<p>What this experience highlights is that things are not always as they first appear.  Actions shaped by Dementia could easily be seen as challenges by carers or loved ones. Yet, when we take the time to understand rather than dismiss and work as a wider team, we know what joy may be unlocked in the process. 
+<br>
+Dementia can be such an alienating experience for everyone involved. However, practices such as Dementia Care Mapping help us to better understand those living with it, break down barriers, and ultimately improve the care and support we provide.
+<br>
+Stay tuned for more success stories to come, or following this journey and our other adventure on our social media, @midlandscare.</p>
+
+            `
+            },
+
+            2: {
+                title: "The Perfect Day Project ",
+                date: "28 May 2026",
+                image: "./2ndblog.jpg",
+                content: `
+                <p><span >What do you think of when we ask you about your perfect day? </span>  Some people may go extreme, a trip to the Bahamas, the ride on the biggest rollercoaster or meeting a celebrity. Others prefer the simple pleasures, maybe just a cup of tea with family or a nice ten hour long sleep. Although fun to think about, most people may never work to intentionally fulfill this perfect day. But at Midlands Care, we like a challenge! So we asked ourselves, what if we could fulfill the perfect day of every single person in our care. From here, our perfect day project was born. </p>
+
+                <p>Our wonderful team of activities coordinators have made a start, having meaningful conversations to ask the perfect day question. These conversations in themselves have been magical. Often leading to joyful reminiscence, with visiting family and friends joining in and sharing in the excitement too. Even the less chatty residents come out of their shell at the prospect of planning something exciting, something that has been so special to see.</p>
+
+                <p>One lady, who is usually not a fan of outings, talked about her love of singing and her old choir that used to be a big part of her life. She sang with her daughters, followed by tea cake and a good chat-  something she would love to recreate. Well, what was stopping us? The home’s activity duo contacted the group, and of course remembered her, welcoming her back for a wonderful session with her daughters again. </p>
+
+                <p>Another gentleman grew up and worked on farms, and has very fond memories of these times. He is a big lover of horses and wished he could spend some time with them again. So that is what was planned. A wonderful trip to a local riding school, followed by a yummy meal of fish and chips. Simple, yet wonderful. And really, isn’t it just these simple things that mean the most?</p>
+                <p>What about the idea of returning to your childhood home, roaming the streets you used to know so well? That was exactly what was arranged for another gentleman, a trip back to his old village. The pub he used to meet friends at after work, a drive past the field where he spent hours playing football, his first school, his first work place-  all of the places that hold so many memories. It really was a day full of nostalgia and meaningful moments. 
+
+</p>
+                <p>These are just some examples and the many amazing experiences that are taking place. We should thank our director, Charlie, who never fails to come up with new ways to enrich the care that we offer, and was the one to ask this question in the first place. As well as, of course, our amazing activity team who continue to go the extra mile, making these wishes come true. Stay tuned to find out what other adventure everyone gets up to.  <span > With some of the discussions taking place, we certainly predict some exciting times ahead!</span ></p>
+            `
+            },
+
+            3: {
+                title: "Meaningful Moments: A Trip Down Memory Lane",
+                date: "25 May 2026",
+                image: "./3rdblog.jpg",
+                content: `
+                <h3>A Trip Down Memory Lane for Jim’s 104th Birthday</h3>
+                <p>At Midlands Care, we believe that every life story deserves to be celebrated. This month our colleagues at Portland House had the joy of doing just that for our wonderful Jim as he approached an incredible milestone: his 104th birthday.</p>
+
+                <p>To mark the occasion, they organised a very special trip back to the place where Jim’s story began – Burton-on-Trent. What followed was a truly heartwarming journey through the memories that have shaped his remarkable life.</p>
+
+                <p>Our first stop was Cross Street, where Jim was born. Walking along the very street where his life started was a powerful moment, sparking memories and stories that Jim was delighted to share with us. From there, a visit to the local pub where Jim used to meet friends after work</p>
+
+                <p>The trip continued with a drive past the playing fields where Jim spent countless hours playing football in his younger days. You could see the joy on his face as he recalled those energetic matches and the fun he shared with teammates and friends.</p>
+                <p>We also stopped by the school he attended from the age of 5 to 14, a place that played such an important role in his early years. Finally, we passed his first workplace, bringing back memories of his first steps into working life.</p>
+                <p>It was a privilege for our team to hear Jim’s stories and see the places that meant so much to him. Moments like these remind us how important memories are and how meaningful it can be to reconnect with the past.</p>
+                <p>The whole trip was filled with smiles, laughter, and plenty of nostalgia. Most importantly, it was a joy for us all to share in Jim’s memories and celebrate the incredible life he has lived.</p>
+                <p>Happy 104th birthday, Jim — thank you for letting us be part of your journey.</p>
+            `
+            }
+
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id") || 1;
+
+        const blog = blogs[id];
+
+        document.getElementById("blogTitle").innerHTML = blog.title;
+        document.getElementById("blogDate").innerHTML = blog.date;
+        document.getElementById("blogImage").src = blog.image;
+        document.getElementById("blogContent").innerHTML = blog.content;
+    </script>
+
+</body>
+
+</html>

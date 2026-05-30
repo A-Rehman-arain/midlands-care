@@ -10,7 +10,6 @@
     rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/brittany-signature" rel="stylesheet">
   <style>
-
     :root {
       --navy: #202E48;
       --navy-deep: #001833;
@@ -23,167 +22,323 @@
       --page-pad: 72px;
       --section-y: 88px;
     }
+
+    
+/* CARE HOME CONTENT SECTION */
+
+.care-home-section {
+  padding: 80px 72px;
+  background: #fff;
+}
+
+.care-home-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.care-home-section h1 {
+  font-size: 42px;
+  color: #202E48;
+  margin-bottom: 15px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.care-home-section h2 {
+  font-size: 28px;
+  color: #202E48;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.care-home-section p {
+  color: #666;
+  line-height: 1.9;
+  margin-bottom: 18px;
+    font-weight: 600;
+     text-align: center;
+}
+
+.read-more-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .6s ease;
+}
+
+.read-more-content.show {
+  max-height: 10000px;
+}
+
+.read-more-btn,
+.bottom-btn {
+  display: block;
+  margin: 25px auto;
+  background: #FFCF6A;
+  color: #202E48;
+  border: none;
+  padding: 14px 34px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 18px 4px 18px 4px;
+  transition: .3s;
+}
+
+.read-more-btn:hover,
+.bottom-btn:hover {
+  background: #f5c85a;
+}
+
+
+@media (max-width: 768px) {
+
+  .care-home-section {
+    padding: 60px 24px;
+  }
+
+  .care-home-section h1 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .care-home-section h2 {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .care-home-section p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .read-more-btn,
+  .bottom-btn {
+    width: fit-content;
+    min-width: 180px;
+    padding: 12px 28px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+
+  .care-home-section {
+    padding: 40px 18px;
+  }
+
+  .care-home-section h1 {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .care-home-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .care-home-section p {
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  .read-more-btn,
+  .bottom-btn {
+    width: 100%;
+    max-width: 250px;
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+}
     /* NAVBAR */
-/* NAVBAR */
-.navbar{
-  display:none;
-}
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 50px;
+      z-index: 999999;
+      transition: all .3s ease;
+      background: transparent;
+    }
 
-/* MOBILE ONLY */
-@media(max-width:768px){
+    .sticky-nav {
+      background: #202E48;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+      padding: 14px 24px;
+    }
 
- .navbar{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  padding:16px 24px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  z-index:99999;
-  background:#202E48;
-}
+    /* DESKTOP */
+    @media(min-width:769px) {
 
-  .hero-logo{
-    display:none;
-  }
+      .navbar {
+        background: transparent;
+      }
 
-  .nav-logo{
-    color:#fff;
-    text-decoration:none;
-    font-size:28px;
-    font-weight:700;
-  }
+    }
 
-  .menu-toggle{
-    display:block;
-    background:none;
-    border:none;
-    color:#fff;
-    font-size:32px;
-    cursor:pointer;
-  }
+    /* MOBILE */
+    @media(max-width:768px) {
 
-  .nav-menu{
-    position:absolute;
-    top:70px;
-    right:24px;
-    background:#202E48;
-    width:220px;
-    border-radius:12px;
-    padding:20px;
-    display:none;
-    flex-direction:column;
-    gap:16px;
-  }
+      .navbar {
+        display: flex;
+        background: #202E48;
+        padding: 16px 20px;
+      }
 
-  .nav-menu.active{
-    display:flex;
-  }
 
-  .nav-menu a{
-    color:#fff;
-    text-decoration:none;
-    font-size:16px;
-    font-weight:500;
-  }
+      .hero-logo {
+        display: none;
+      }
 
-}
-   @media(max-width:768px){
+      .nav-logo {
+        font-family: 'Brittany Signature', cursive;
+        font-size: 32px;
+        color: var(--gold-dark);
+        text-decoration: none;
+        line-height: 1;
+        letter-spacing: 0.02em;
+      }
 
-  html, body{
-    overflow-x:hidden;
-    width:100%;
-  }
+      .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 32px;
+        cursor: pointer;
+      }
 
-  .mobile-slider{
-    width:100%;
-    overflow:hidden;
-  }
+      .nav-menu {
+        position: absolute;
+        top: 70px;
+        right: 24px;
+        background: #202E48;
+        width: 220px;
+        border-radius: 12px;
+        padding: 20px;
+        display: none;
+        flex-direction: column;
+        gap: 16px;
+      }
 
-  .mobile-slider-track{
-    display:flex;
-    width:100%;
-    gap:0 !important;
-  }
+      .nav-menu.active {
+        display: flex;
+      }
 
-  .mobile-slide,
-  .service-item,
-  .ben-card,
-  .test-card{
-    width:100% !important;
-    min-width:100% !important;
-    max-width:100% !important;
-    margin:0 !important;
-    flex-shrink:0;
-    box-sizing:border-box;
-  }
+      .nav-menu a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+      }
 
-}
+    }
+
+    @media(max-width:768px) {
+
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      .mobile-slider {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .mobile-slider-track {
+        display: flex;
+        width: 100%;
+        gap: 0 !important;
+      }
+
+      .mobile-slide,
+      .service-item,
+      .ben-card,
+      .test-card {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        flex-shrink: 0;
+        box-sizing: border-box;
+      }
+
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0
     }
+
     /* REMOVE ALL SLIDER BUTTONS */
-.slider-arrow{
-  display:none !important;
-}
+    .slider-arrow {
+      display: none !important;
+    }
 
-/* MOBILE SLIDER */
-@media(max-width:768px){
+    /* MOBILE SLIDER */
+    @media(max-width:768px) {
 
-  .mobile-slider{
-    overflow:hidden;
-    width:100%;
-    position:relative;
-  }
-  .ben-grid,
-.test-grid{
-  padding:0 !important;
-  margin:0 !important;
-}
+      .mobile-slider {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+      }
 
-   .mobile-slider-track{
-  display:flex !important;
-  flex-wrap:nowrap !important;
-  gap:0 !important;
-  width:max-content;
-  transition:transform .6s ease;
-} .mobile-slider{
-  overflow:hidden;
-  position:relative;
-  width:100%;
-}
+      .ben-grid,
+      .test-grid {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
 
-.mobile-slide{
-  
-  flex-shrink:0;
-}
+      .mobile-slider-track {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 0 !important;
+        width: max-content;
+        transition: transform .6s ease;
+      }
 
-  /* ONE BOX AT A TIME */
-  .service-item,
-  .ben-card,
-  .test-card{
-    min-width:100% !important;
-    max-width:100% !important;
-    flex-shrink:0;
-  }
+      .mobile-slider {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
 
-  .svc-sep{
-    display:none !important;
-  }
+      .mobile-slide {
 
-  .services-bar{
-    padding:0;
-  }
+        flex-shrink: 0;
+      }
 
-  .test-grid,
-  .ben-grid{
-    gap:0 !important;
-  }
-}
+      /* ONE BOX AT A TIME */
+      .service-item,
+      .ben-card,
+      .test-card {
+        min-width: 100% !important;
+        max-width: 100% !important;
+        flex-shrink: 0;
+      }
+
+      .svc-sep {
+        display: none !important;
+      }
+
+      .services-bar {
+        padding: 0;
+      }
+
+      .test-grid,
+      .ben-grid {
+        gap: 0 !important;
+      }
+    }
 
     @media(max-width:768px) {
 
@@ -344,12 +499,9 @@
 
     /* HERO — matches Figma banner (hero-banner.png has left gradient baked in) */
     .hero {
-      position: fixed;
-      top: 0;
-      left: 0;
+      position: relative;
       width: 100%;
-      height: 100vh;
-      z-index: 1;
+      min-height: 100vh;
       background: #0a1628;
       overflow: hidden;
     }
@@ -357,7 +509,6 @@
     .page-content {
       position: relative;
       z-index: 2;
-      margin-top: 100vh;
       background: #fff;
     }
 
@@ -405,6 +556,14 @@
     .hero-inner {
       max-width: 480px;
       margin-left: 0;
+    }
+
+    @media(min-width:769px) {
+
+      .navbar {
+        display: none;
+      }
+
     }
 
     .hero h1 {
@@ -962,7 +1121,7 @@
 
     .test-card {
       width: var(--card-w);
-        margin: 8px;
+      margin: 8px;
       background: #fff;
       border-radius: 14px;
       padding: 26px 26px 28px;
@@ -1258,6 +1417,10 @@
       align-items: center;
       justify-content: center;
       padding: 24px
+    }
+
+    .pop-ov {
+      z-index: 9999999;
     }
 
     .pop-ov.on {
@@ -1561,7 +1724,7 @@
       }
     }
 
-    
+
 
     .mobile-slider {
       position: relative;
@@ -1637,88 +1800,6 @@
     }
   </style>
 </head>
- <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const menuToggle = document.getElementById("menuToggle");
-  const navMenu = document.getElementById("navMenu");
-  const navbar = document.querySelector(".navbar");
-
-  // TOGGLE MENU
-  if(menuToggle && navMenu){
-
-    menuToggle.addEventListener("click", function (e) {
-      e.stopPropagation();
-      navMenu.classList.toggle("active");
-    });
-
-    // CLOSE WHEN CLICKING A LINK
-    const navLinks = navMenu.querySelectorAll("a");
-
-    navLinks.forEach(link => {
-      link.addEventListener("click", function () {
-        navMenu.classList.remove("active");
-      });
-    });
-
-    // CLOSE WHEN CLICKING OUTSIDE
-    document.addEventListener("click", function (e) {
-
-      if(
-        !navMenu.contains(e.target) &&
-        !menuToggle.contains(e.target)
-      ){
-        navMenu.classList.remove("active");
-      }
-
-    });
-
-  }
-
-});
-function createAutoSlider(id, slideSelector) {
-
-  if (window.innerWidth > 768) return;
-
-  const slider = document.getElementById(id);
-  if (!slider) return;
-
-  const track = slider.querySelector(".mobile-slider-track");
-  const slides = slider.querySelectorAll(slideSelector);
-
-  if (!track || slides.length === 0) return;
-
-  let current = 0;
-
-  function moveSlider() {
-    track.style.transform = `translateX(-${current * 100}%)`;
-  }
-
-  function autoSlide() {
-    current++;
-
-    if (current >= slides.length) {
-      current = 0;
-    }
-
-    moveSlider();
-  }
-
-  moveSlider();
-
-  setInterval(autoSlide, 3000);
-}
-
-window.addEventListener("load", () => {
-
-  createAutoSlider("servicesSlider", ".service-item");
-
-  createAutoSlider("benefitsSlider", ".ben-card");
-
-  createAutoSlider("testimonialsSlider", ".test-card");
-
-});
-</script>
 
 <body>
 
@@ -1732,12 +1813,7 @@ window.addEventListener("load", () => {
             class="gold gold-lg line">Midlands</span></h2>
         <p>Warm, compassionate, and professional residential care tailored to every resident.</p>
         <div class="pop-cta-row">
-          <span class="pop-script">Fill The Form</span>
-          <svg class="pop-arrow" viewBox="0 0 80 56" fill="none" aria-hidden="true">
-            <path d="M4 48 C28 8, 52 4, 76 8" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" />
-            <path d="M66 4 L76 10 L68 18" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
+
         </div>
       </div>
       <div class="pop-right">
@@ -1764,21 +1840,21 @@ window.addEventListener("load", () => {
     <div class="hero-bg" aria-hidden="true"></div>
     <header class="navbar">
 
-  <a href="#" class="nav-logo">Midlands Care</a>
+      <a href="#" class="nav-logo">Midlands Care</a>
 
-  <button class="menu-toggle" id="menuToggle">
-    ☰
-  </button>
+      <button class="menu-toggle" id="menuToggle">
+        ☰
+      </button>
 
-  <nav class="nav-menu" id="navMenu">
-    <a href="#homes">View Our Homes</a>
-    <a href="#about">About</a>
-    <a href="#benefits">Benefits</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#faq">FAQ</a>
-  </nav>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#homes">View Our Homes</a>
+        <a href="#about">About</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+      </nav>
 
-</header>
+    </header>
     <div class="hero-overlay" aria-hidden="true"></div>
     <a href="#" class="hero-logo" aria-label="Midlands Care">Midlands Care</a>
     <div class="hero-content">
@@ -1826,7 +1902,7 @@ window.addEventListener("load", () => {
     </div>
 
     <!-- VIEW OUR HOMES -->
-    <section  id="homes" class="section bg-white section-center">
+    <section id="homes" class="section bg-white section-center">
       <h2 class="sec-title">View Our Homes</h2>
       <div class="homes-layout">
         <div class="home-card">
@@ -2025,7 +2101,7 @@ window.addEventListener("load", () => {
 
     <!-- BENEFITS -->
 
-    <section  id="benefits" class="section bg-white section-center">
+    <section id="benefits" class="section bg-white section-center">
       <h2 class="sec-title">Care Home Benefits</h2>
       <div class="ben-grid mobile-slider" id="benefitsSlider">
         <div class="mobile-slider-track">
@@ -2063,7 +2139,7 @@ window.addEventListener("load", () => {
     </section>
 
     <!-- TESTIMONIALS -->
-    <section  id="testimonials" class="section bg-cream section-center">
+    <section id="testimonials" class="section bg-cream section-center">
       <h2 style="    font-family: Inter, sans-serif; " class="sec-title">Testimonials</h2>
       <div class="test-grid mobile-slider" id="testimonialsSlider">
         <div class="mobile-slider-track">
@@ -2226,7 +2302,7 @@ window.addEventListener("load", () => {
     </section>
 
     <!-- FAQ -->
-    <section  id="faq" class="section bg-white section-center">
+    <section id="faq" class="section bg-white section-center">
       <h2 style="    font-family: Inter, sans-serif; " class="sec-title">Frequently Asked Questions</h2>
       <div class="faq-wrap">
         <div class="faq-item" onclick="this.classList.toggle('open')">
@@ -2270,35 +2346,182 @@ window.addEventListener("load", () => {
       </div>
       <div class="faq-cta"><a href="https://midlandscare.co.uk" class="btn-gold">Read More</a></div>
     </section>
+    <!-- care-home-section -->
+    <section class="section bg-white care-home-section">
+  <div class="care-home-wrap">
 
+    <h1>Care Home in Leicester</h1>
+
+    <h2>Personalised Care for Every Resident</h2>
+
+    <p>
+      In this journey, it is crucial to gather as much information as possible
+      about different care homes, their facilities, services, and the expertise
+      of their staff. Take the opportunity to visit and tour potential care
+      homes, observe the environment, engage with staff members, and interact
+      with current residents. This firsthand experience will offer valuable
+      insights and help you gauge the atmosphere and quality of care provided.
+    </p>
+
+    <button class="read-more-btn" id="readMoreBtn">
+      Read More
+    </button>
+
+    <div class="read-more-content" id="readMoreContent">
+
+      <p>
+        Finding the right care home is one of the most important decisions you
+        will ever make, whether for yourself or a loved one. At Midlands Care,
+        we understand the significance of providing a safe, nurturing, and
+        fulfilling environment for all our residents.
+      </p>
+
+      <h2>Why Choose Midlands Care Home?</h2>
+
+      <p>
+        Choosing a care home is not just about finding a place to live. It is about finding a community that supports well-being, provides outstanding care, and enhances daily life. Here is what makes Midlands Care stand out;
+      </p>
+
+      <h2>Person-Centred Care</h2>
+
+      <p>
+       We understand that every resident has unique needs, preferences, and life experiences. Our person-centred care approach ensures that every individual receives tailored support that respects their independence while providing the assistance they require. <br/>
+
+From daily routines to activities and meal preferences, our care is shaped around each person’s lifestyle, helping them maintain their dignity and enjoy a high standard of living.
+      </p>
+
+      <h2>Highly Trained and Compassionate Staff</h2>
+
+      <p>
+      A care home is only as good as its caregivers. At Midlands Care, we pride ourselves on our team of highly trained professionals who provide 24/7 support. Our caregivers are not just staff. They are companions, ensuring that residents receive not only excellent care but also emotional support and companionship.  <br/>
+
+We also have ongoing training and professional development to ensure that our team remains at the forefront of best practices in elderly care, dementia care in Leicester, and nursing care. This commitment guarantees that every resident receives the highest level of service tailored to their specific needs.
+      </p>
+
+      <h2>A Warm and Homely Environment</h2>
+
+      <p>
+       We believe that a care home should truly feel like home. From thoughtfully designed living spaces to welcoming communal areas, our homes are created to provide comfort and security. Our residents can personalise their rooms with familiar belongings, making the transition to a care home as smooth as possible.  <br/>
+
+The overall environment is designed to promote independence while offering the support needed to navigate daily life with ease. Whether residents wish to enjoy quiet time in a private space or engage in social activities, there is always an option that caters to their needs and preferences. We have cares homes in Leicester, care homes in Nuneaton and across the Midlands!
+      </p>
+
+      <h2>Nutritious and Delicious Meals</h2>
+
+      <p>
+        Eating well is essential for good health, especially for older adults. At Midlands Care, we offer a wide variety of delicious and nutritious meals that cater to different dietary needs and personal preferences. Our expert chefs use fresh ingredients to prepare balanced meals that not only nourish the body but also bring joy to mealtimes. <br>
+
+We understand that food is more than just sustenance. It is a source of comfort and pleasure. Mealtimes are also an opportunity for social interaction, bringing residents together to share stories and enjoy a warm, welcoming atmosphere.
+      </p>
+
+      <h2>Engaging Social Activities and Events</h2>
+
+      <p>
+        Staying socially active is just as important as receiving good care. That is why we offer a full schedule of activities to keep residents engaged, entertained, and stimulated. Our activities include arts and crafts, music therapy, gardening, exercise classes, and group outings.
+   <br>
+Every resident has the opportunity to participate in activities that match their interests and abilities. These activities help residents build friendships, stay mentally active, and feel part of a supportive community.
+      </p>
+
+      <h2>Safety and Well-Being as a Priority</h2>
+
+      <p>
+       Safety and well-being are at the heart of everything we do. Our care home is equipped with modern safety features to ensure a secure environment, and our staff is well-trained to handle medical emergencies, ensuring residents receive immediate attention whenever needed.
+<br>
+We also prioritise mental well-being by offering emotional support, companionship, and mental health resources. We understand that transitioning to a care home can be an emotional experience, and we strive to make the adjustment as smooth and reassuring as possible for both residents and their families.
+      </p>
+
+      <h2>A Commitment to Excellence in Care</h2>
+
+      <p>
+       At Midlands Care, we constantly strive to improve and innovate in care services. Our team stays updated with the latest advancements in healthcare, ensuring that we provide the highest quality services possible. From state-of-the-art safety features to personalised care plans, our focus is always on enhancing the lives of those we support. <br/>
+
+Choosing the right care home is a significant decision, and we understand the importance of finding a place that feels right for you or your loved one. Midlands Care is dedicated to making every resident feel valued, respected, and truly at home. With our exceptional care services, highly qualified and compassionate staff, and engaging community, we guarantee a safe and nurturing space where everyone can thrive.
+<br>
+Midlands Care is a leading care service facility dedicated to providing tailored care when you need it most and at your most vulnerable time. We are dedicated to helping your sunset years become enjoyable, respectful, and meaningful with our tailored services, skilled and experienced staff, and state-of-the-art facilities.<br>
+
+Our care services transcend the typical medical and daily living care services and are designed to meet the various requirements of our residents, including their cultural preferences, making our care home another home away from home. We are not only focused on keeping you healthy but also on helping make every year your best year, providing comfort and happiness in all the things you love.
+      </p>
+
+      <h2>Care Services Tailored to Meet Your Needs</h2>
+
+   <p>
+    Midlands Care offers a wide range care services that are culturally appropriated and tailored to the health and physical needs of our residents. Our extensive range of care services includes the following:
+   </p>
+  <h2>Day Care</h2>
+<p>Do you love staying in your own home but don’t have someone around during the day to check on you? Our daycare services are perfectly suited for you. We have a purpose-built daycare home and capacity for daycare services in all our care homes to ensure you have a productive day under the watchful eye and compassionate hands of our caregivers.
+<br>
+With our day care services, you can enjoy staying in your home longer without compromising your safety and health while getting an opportunity to mingle with other residents, strike new conversations and engage in the fun activities organised in our homes.</p>
+<h2>Residential Care</h2>
+<p>Your sunset years shouldn’t be reduced to sitting by the window and watching all the fun happen outside. With our residential care services, you can rekindle that fun flame and live a fulfilling life in a comfortable and sociable home packed with activities and opportunities to meet new people and make new friends.
+<br>
+We provide you with the highest standard of quality care tailored to your needs and interests. We offload the responsibility that comes with daily living, allowing you to make the most of your time doing the things you enjoy and love.</p>
+<h2>Respite Care</h2>
+<p> Our respite care services give you a taste of our residential care services. These short stays are a great way to gauge our services and to give primary caregivers a much-needed break. Respite care may also be necessary after a short stint in a hospital that requires a period of close observation before you can get back to your normal life. <br>
+
+If you are considering residential care, respite care is a great place to start. It gives you a hint of the experience and environment we offer and makes it easier for you or your family to decide whether becoming a resident in our care home is the best option for you.</p>
+   <h2>Dementia Care</h2>
+   <p>We have experienced and well-trained medical professionals and caregivers dedicated to providing dementia care to residents with various symptoms of dementia, including memory loss, problem-solving, language and overall thinking. <br>
+
+While these symptoms start small, they can have far-reaching effects on the patient’s quality of life and abilities. Our team at Midlands Care can help ensure the resident gets the support they need even as the condition progresses so they can get the most out of life and have comfortable and responsive care that adjusts as the condition progresses.</p>
+<h2>Nursing Care</h2>
+<p>We provide nursing care for residents who require additional professional medical care in addition to assistance with their daily living duties. This type of care involves having nurses and other healthcare professionals available around the clock to meet their medical needs. <br>
+
+Our nursing care service is tailored to meet the needs of residents with various medical conditions, some of which may be age-related. We also provide palliative care for patients requiring extra keen medical observation at all times.</p>
+<h2>What Makes Our Care Services Different? </h2>
+<p>At Midlands Care, we consider elderly care a calling. We strive to provide the best care services and set ourselves above the rest with unrivalled facilities that cater to the bespoke needs of our residents. Some of the factors that make our care homes a cut above the rest include:</p>
+<h2>Diets</h2>
+<p>Going into a care home doesn’t have to mean that you deviate from your diet preferences or as required by your healthcare provider. That is why we offer a wide range of freshly-cooked meals for our residents with the option of sumptuous vegetarian diets that promote your overall well-being and a healthy lifestyle.
+ <br>
+Our meals are carefully prepared using locally sourced, fresh produce, and they are nutritious and tasty for residents who prefer a vegetarian diet.</p>
+<h2>Culturally Appropriate Care</h2>
+<p>
+  When we say we are your home away from home, we mean it in every aspect. From our carefully organised resident rooms, which make you feel at home, to our culturally appropriate care, we are focused on providing you with care services that help you maintain your cultural identity and heritage.
+<br>
+We are alert and responsive to the cultural, religious, and identity beliefs of our residents. To provide culturally appropriate care, we endeavour to ensure our care services are dignified and respectful, and we always seek consent from our residents or their families as necessary.
+</p>
+<h2>Tailored Care Services</h2>
+<p>At Midlands Care, we revere getting to know you so we can provide care services tailored to your needs. Whether it’s your preferences, such as lifestyle choices, or limitations, such as sensory impairments, learning disabilities, or physical disabilities, we take every opportunity to learn as much as we can about you so our services can help you achieve your goals and live your best life.
+<br>
+Our team of highly qualified and experienced medical professionals takes into account everything from tailored care plans to mobility, personalised emergency evacuation plans, and medication management to make your stay as comfortable and stress-free as possible.
+<br>
+Midlands Care provides a dynamic and compassionate approach to elderly care that redefines care services. We are passionate about providing person-centric care services that drive change and inspire excellence and compassion in our field. Our vision and mission are simple: to infuse joy and life into every individual who comes into our care and enhance their living</p>
+      <button class="read-more-btn bottom-btn" id="showLessBtn">
+        Show Less
+      </button>
+
+    </div>
+
+  </div>
+</section>
     <!-- BLOG -->
     <section class="section bg-cream section-center">
       <h2 style="    font-family: Inter, sans-serif;  " class="sec-title">Latest News</h2>
       <div class="blog-grid">
         <div class="blog-card">
-          <img src="Rectangle 11 (5).png" alt="Latest news">
+          <img src="1stblog.png" alt="Latest news">
           <div class="blog-card-body">
-            <h3 style="    font-family: Inter, sans-serif; ">Proin scelerisque mi et pellentesque bibendum</h3>
+            <h3 style="    font-family: Inter, sans-serif; ">Dementia Care Mapping Success</h3>
             <div class="blog-div"></div>
-            <p>Suspendisse potenti. Donec quis lacus id ante feugiat viverra a posuere tellus. Sed imperdiet velit</p><a
-              href="#" class="rm-link">Read More →</a>
+            <p>At Midlands Care, we are proud to be going the extra mile in offering specialist Dementia Care Mapping to our residents... </p>
+           <a href="blog.html?id=1" class="rm-link">Read More  →</a>
           </div>
         </div>
         <div class="blog-card">
-          <img src="Rectangle 11 (6).png" alt="Latest news">
+          <img src="2ndblog.jpg" alt="Latest news">
           <div class="blog-card-body">
-            <h3 style="    font-family: Inter, sans-serif; ">Donec tincidunt orci at libero bibendum hendrerit</h3>
+            <h3 style="    font-family: Inter, sans-serif; ">The Perfect Day Project</h3>
             <div class="blog-div"></div>
-            <p>Fusce at erat tristique, vestibulum nisl vel, elementum nisi. Suspendisse elementum elit at tortor</p><a
-              href="#" class="rm-link">Read More →</a>
+            <p>What do you think of when we ask you about your perfect day? Some people may go extreme, a trip to the Bahamas, the ride on the biggest rollercoaster or meeting a celebrity... </p>
+            <a
+              href="blog.html?id=2" class="rm-link">Read More →</a>
           </div>
         </div>
         <div class="blog-card">
-          <img src="Rectangle 11 (7).png" alt="Latest news">
+          <img src="3rdblog.jpg" alt="Latest news">
           <div class="blog-card-body">
-            <h3 style="    font-family: Inter, sans-serif; ">Vivamus tempor elementum ligula ut ornare</h3>
+            <h3 style="    font-family: Inter, sans-serif; ">Meaningful Moments: A Trip Down Memory Lane</h3>
             <div class="blog-div"></div>
-            <p>Aliquam erat volutpat. Duis in semper neque, at dictum velit. Curabitur dictum lectus arcu</p><a href="#"
+            <p>At Midlands Care, we believe that every life story deserves to be celebrated. This month our colleagues at Portland House had the...</p><a href="blog.html?id=3"
               class="rm-link">Read More →</a>
           </div>
         </div>
@@ -2353,6 +2576,121 @@ window.addEventListener("load", () => {
     </footer>
   </div>
 
+  <script>
+    window.addEventListener("scroll", function () {
+
+      const navbar = document.querySelector(".navbar");
+
+      if (window.scrollY > 50) {
+        navbar.classList.add("sticky-nav");
+      } else {
+        navbar.classList.remove("sticky-nav");
+      }
+
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const menuToggle = document.getElementById("menuToggle");
+      const navMenu = document.getElementById("navMenu");
+      const navbar = document.querySelector(".navbar");
+
+      // TOGGLE MENU
+      if (menuToggle && navMenu) {
+
+        menuToggle.addEventListener("click", function (e) {
+          e.stopPropagation();
+          navMenu.classList.toggle("active");
+        });
+
+        // CLOSE WHEN CLICKING A LINK
+        const navLinks = navMenu.querySelectorAll("a");
+
+        navLinks.forEach(link => {
+          link.addEventListener("click", function () {
+            navMenu.classList.remove("active");
+          });
+        });
+
+        // CLOSE WHEN CLICKING OUTSIDE
+        document.addEventListener("click", function (e) {
+
+          if (
+            !navMenu.contains(e.target) &&
+            !menuToggle.contains(e.target)
+          ) {
+            navMenu.classList.remove("active");
+          }
+
+        });
+
+      }
+
+    });
+    function createAutoSlider(id, slideSelector) {
+
+      if (window.innerWidth > 768) return;
+
+      const slider = document.getElementById(id);
+      if (!slider) return;
+
+      const track = slider.querySelector(".mobile-slider-track");
+      const slides = slider.querySelectorAll(slideSelector);
+
+      if (!track || slides.length === 0) return;
+
+      let current = 0;
+
+      function moveSlider() {
+        track.style.transform = `translateX(-${current * 100}%)`;
+      }
+
+      function autoSlide() {
+        current++;
+
+        if (current >= slides.length) {
+          current = 0;
+        }
+
+        moveSlider();
+      }
+
+      moveSlider();
+
+      setInterval(autoSlide, 3000);
+    }
+
+    window.addEventListener("load", () => {
+
+      createAutoSlider("servicesSlider", ".service-item");
+
+      createAutoSlider("benefitsSlider", ".ben-card");
+
+      createAutoSlider("testimonialsSlider", ".test-card");
+
+    });
+
+    const readMoreBtn = document.getElementById("readMoreBtn");
+    const showLessBtn = document.getElementById("showLessBtn");
+    const readMoreContent = document.getElementById("readMoreContent");
+
+    readMoreBtn.addEventListener("click", () => {
+      readMoreContent.classList.add("show");
+      readMoreBtn.style.display = "none";
+    });
+
+    showLessBtn.addEventListener("click", () => {
+      readMoreContent.classList.remove("show");
+      readMoreBtn.style.display = "block";
+
+      document.querySelector(".care-home-section").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+
+  </script>
+
 </body>
+
 
 </html>
