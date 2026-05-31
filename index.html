@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico">
   <title>Midlands Care Group</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
@@ -25,8 +25,8 @@
     }
 
     .logo {
-      position: absolute; 
-       
+      position: absolute;
+
       top: 27px;
       left: 73px;
       z-index: 10;
@@ -39,14 +39,14 @@
 
     @media (max-width: 768px) {
       .logo {
-        left:27px;
+        left: 27px;
         max-width: 260px;
       }
     }
 
     @media (max-width: 480px) {
       .logo {
-left:17px;
+        left: 17px;
         max-width: 220px;
       }
     }
@@ -1350,13 +1350,41 @@ left:17px;
       margin: 0 auto
     }
 
+
     .blog-card {
       width: var(--card-w);
       background: #fff;
       border-radius: 17px;
       overflow: hidden;
-      box-shadow: 7px 4px 16px rgba(0, 0, 0, 0.04);
-      border: 1px solid #E2E2E2
+      box-shadow: 7px 4px 16px rgba(0, 0, 0, .04);
+      border: 1px solid #E2E2E2;
+      position: relative;
+      cursor: pointer;
+      transition: all .35s ease;
+    }
+
+    .blog-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top,
+          rgba(255, 207, 106, 0.35),
+          transparent 60%);
+      opacity: 0;
+      transition: opacity .35s ease;
+      pointer-events: none;
+    }
+
+    .blog-card:hover::before {
+      opacity: 1;
+    }
+
+    .blog-card:hover {
+
+      transform: translateY(-8px);
+      box-shadow:
+        0 12px 30px rgba(255, 207, 106, 0.25),
+        0 0 35px rgba(255, 207, 106, 0.18);
     }
 
     .blog-card img {
@@ -2678,7 +2706,7 @@ left:17px;
     <section class="section bg-cream section-center" style="background-color:#F9F7F4">
       <h2 style="    font-family: Inter, sans-serif;  " class="sec-title">Latest News</h2>
       <div class="blog-grid">
-        <div class="blog-card">
+        <div class="blog-card" onclick="window.location.href='blog.html?id=1'">
           <img src="1stblog.png" alt="Latest news">
           <div class="blog-card-body">
             <h3 style="    font-family: Inter, sans-serif; ">Dementia Care Mapping Success</h3>
@@ -2688,7 +2716,7 @@ left:17px;
             <a href="blog.html?id=1" class="rm-link">Read More →</a>
           </div>
         </div>
-        <div class="blog-card">
+        <div class="blog-card" onclick="window.location.href='blog.html?id=1'">
           <img src="2ndblog.jpg" alt="Latest news">
           <div class="blog-card-body">
             <h3 style="    font-family: Inter, sans-serif; ">The Perfect Day Project</h3>
@@ -2698,7 +2726,7 @@ left:17px;
             <a href="blog.html?id=2" class="rm-link">Read More →</a>
           </div>
         </div>
-        <div class="blog-card">
+        <div class="blog-card" onclick="window.location.href='blog.html?id=1'">
           <img src="3rdblog.jpg" alt="Latest news">
           <div class="blog-card-body">
             <h3 style="    font-family: Inter, sans-serif; ">Meaningful Moments: A Trip Down Memory Lane</h3>
