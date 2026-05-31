@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.ico">
   <title>Midlands Care Group</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
@@ -23,133 +24,207 @@
       --section-y: 88px;
     }
 
-    
-/* CARE HOME CONTENT SECTION */
+    .logo {
+      position: absolute; 
+       
+      top: 27px;
+      left: 73px;
+      z-index: 10;
+      max-width: 290px;
+      /* desktop size */
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-.care-home-section {
-  padding: 80px 72px;
-  background: #fff;
-}
+    @media (max-width: 768px) {
+      .logo {
+        left:27px;
+        max-width: 260px;
+      }
+    }
 
-.care-home-wrap {
-  max-width: 1100px;
-  margin: 0 auto;
-}
+    @media (max-width: 480px) {
+      .logo {
+left:17px;
+        max-width: 220px;
+      }
+    }
 
-.care-home-section h1 {
-  font-size: 42px;
-  color: #202E48;
-  margin-bottom: 15px;
-  font-weight: 900;
-  text-align: center;
-}
+    /* MAKE WHOLE GRID CARD CLICKABLE */
+    .home-card {
+      cursor: pointer;
+      transition: transform .3s ease, box-shadow .3s ease;
+      position: relative;
+      overflow: hidden;
+    }
 
-.care-home-section h2 {
-  font-size: 28px;
-  color: #202E48;
-  margin-bottom: 20px;
-  font-weight: 700;
-  text-align: center;
-}
+    /* GOLD GLOW EFFECT */
+    .home-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top,
+          rgba(255, 207, 106, 0.35),
+          transparent 60%);
+      opacity: 0;
+      transition: opacity .35s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
 
-.care-home-section p {
-  color: #666;
-  line-height: 1.9;
-  margin-bottom: 18px;
-    font-weight: 600;
-     text-align: center;
-}
+    .home-card:hover::before {
+      opacity: 1;
+    }
 
-.read-more-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .6s ease;
-}
+    .home-card:hover {
+      transform: translateY(-8px);
+      box-shadow:
+        0 12px 30px rgba(255, 207, 106, 0.25),
+        0 0 35px rgba(255, 207, 106, 0.18);
+    }
 
-.read-more-content.show {
-  max-height: 10000px;
-}
+    /* KEEP CONTENT ABOVE GLOW */
+    .home-card>* {
+      position: relative;
+      z-index: 2;
+    }
 
-.read-more-btn,
-.bottom-btn {
-  display: block;
-  margin: 25px auto;
-  background: #FFCF6A;
-  color: #202E48;
-  border: none;
-  padding: 14px 34px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  border-radius: 18px 4px 18px 4px;
-  transition: .3s;
-}
-
-.read-more-btn:hover,
-.bottom-btn:hover {
-  background: #f5c85a;
-}
+    .btn-callback {
+      position: relative;
+      z-index: 5;
+    }
 
 
-@media (max-width: 768px) {
+    /* CARE HOME CONTENT SECTION */
 
-  .care-home-section {
-    padding: 60px 24px;
-  }
+    .care-home-section {
+      padding: 80px 72px;
+      background: #fff;
+    }
 
-  .care-home-section h1 {
-    font-size: 32px;
-    line-height: 1.3;
-  }
+    .care-home-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-  .care-home-section h2 {
-    font-size: 24px;
-    line-height: 1.4;
-  }
+    .care-home-section h1 {
+      font-size: 35px;
+      color: #202E48;
+      margin-bottom: 15px;
+      font-weight: 900;
+      text-align: center;
+    }
 
-  .care-home-section p {
-    font-size: 15px;
-    line-height: 1.8;
-  }
+    .care-home-section h2 {
+      font-size: 28px;
+      color: #202E48;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-align: center;
+    }
 
-  .read-more-btn,
-  .bottom-btn {
-    width: fit-content;
-    min-width: 180px;
-    padding: 12px 28px;
-    font-size: 15px;
-  }
-}
-@media (max-width: 480px) {
+    .care-home-section p {
+      color: #666;
+      line-height: 1.9;
+      margin-bottom: 18px;
+      font-weight: 500;
+      text-align: center;
+      font-size: 16px;
+    }
 
-  .care-home-section {
-    padding: 40px 18px;
-  }
+    .read-more-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .6s ease;
+    }
 
-  .care-home-section h1 {
-    font-size: 26px;
-    margin-bottom: 12px;
-  }
+    .read-more-content.show {
+      max-height: 10000px;
+    }
 
-  .care-home-section h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
+    .read-more-btn,
+    .bottom-btn {
+      display: block;
+      margin: 25px auto;
+      background: #FFCF6A;
+      color: #202E48;
+      border: none;
+      padding: 14px 34px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 18px 4px 18px 4px;
+      transition: .3s;
+    }
 
-  .care-home-section p {
-    font-size: 14px;
-    line-height: 1.7;
-    text-align: left;
-  }
+    .read-more-btn:hover,
+    .bottom-btn:hover {
+      background: #f5c85a;
+    }
 
-  .read-more-btn,
-  .bottom-btn {
-    width: 100%;
-    max-width: 250px;
-    font-size: 14px;
-    padding: 12px 20px;
-  }
-}
+
+    @media (max-width: 768px) {
+
+      .care-home-section {
+        padding: 60px 24px;
+      }
+
+      .care-home-section h1 {
+        font-size: 32px;
+        line-height: 1.3;
+      }
+
+      .care-home-section h2 {
+        font-size: 24px;
+        line-height: 1.4;
+      }
+
+      .care-home-section p {
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .read-more-btn,
+      .bottom-btn {
+        width: fit-content;
+        min-width: 180px;
+        padding: 12px 28px;
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .care-home-section {
+        padding: 40px 18px;
+      }
+
+      .care-home-section h1 {
+        font-size: 26px;
+        margin-bottom: 12px;
+      }
+
+      .care-home-section h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      .care-home-section p {
+        font-size: 14px;
+        line-height: 1.7;
+        text-align: left;
+      }
+
+      .read-more-btn,
+      .bottom-btn {
+        width: 100%;
+        max-width: 250px;
+        font-size: 14px;
+        padding: 12px 20px;
+      }
+    }
+
     /* NAVBAR */
     /* NAVBAR */
     .navbar {
@@ -196,6 +271,7 @@
       }
 
       .nav-logo {
+
         font-family: 'Brittany Signature', cursive;
         font-size: 32px;
         color: var(--gold-dark);
@@ -727,14 +803,24 @@
       justify-content: center
     }
 
+    .homes-layout .card:nth-child(-n+3) button {
+      margin-top: 20px;
+    }
+
     .home-card {
       display: flex;
       flex-direction: column;
+      background: #fff;
+      border-radius: 18px;
+
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      transition: 0.3s ease;
     }
 
     .home-card-img-wrap {
       position: relative;
-      height: 240px;
+      height: 280px;
       border-radius: 17px 17px 0 0;
       overflow: visible;
       background: #c8c8c8
@@ -760,7 +846,7 @@
 
     .home-card h3 {
       color: var(--navy);
-      font-size: 20px;
+      font-size: 25px;
       margin-bottom: 10px;
       line-height: 1.35;
       font-family: Inter, sans-serif;
@@ -789,6 +875,11 @@
 
     .home-card p {
       flex: 1;
+      font-size: 17px;
+      line-height: 1.50;
+      font-weight: 500;
+      text-align: center;
+
     }
 
     .btn-callback {
@@ -803,7 +894,8 @@
       cursor: pointer;
       border: none;
       transition: background .25s, transform .2s, box-shadow .25s;
-      font-family: Inter, sans-serif
+      font-family: Inter, sans-serif;
+      margin-top: 20px;
     }
 
     .btn-callback:hover {
@@ -953,7 +1045,7 @@
       margin: 0 auto 24px;
       color: var(--navy);
       font-size: 19px;
-      font-weight: 600;
+      font-weight: 400;
       line-height: 1.55;
       font-family: Inter, sans-serif
     }
@@ -1168,8 +1260,8 @@
 
     .test-text {
       color: var(--text);
-      font-size: 17px;
-      font-weight: 600;
+      font-size: 16px;
+      font-weight: 400;
       line-height: 1.65;
       font-family: Inter, sans-serif;
     }
@@ -1840,7 +1932,9 @@
     <div class="hero-bg" aria-hidden="true"></div>
     <header class="navbar">
 
-      <a href="#" class="nav-logo">Midlands Care</a>
+      <a href="#" class="nav-logo">
+        <img src="image 1 (1).png" alt="Midlands Care Logo" class="logo">
+      </a>
 
       <button class="menu-toggle" id="menuToggle">
         ☰
@@ -1856,7 +1950,9 @@
 
     </header>
     <div class="hero-overlay" aria-hidden="true"></div>
-    <a href="#" class="hero-logo" aria-label="Midlands Care">Midlands Care</a>
+    <a href="#" class="nav-logo" aria-label="Midlands Care">
+      <img src="image 1 (1).png" alt="Midlands Care Logo" class="logo">
+    </a>
     <div class="hero-content">
       <div class="hero-inner">
         <h1>
@@ -1873,7 +1969,7 @@
   </section>
   <div class="page-content">
     <!-- SERVICES BAR -->
-    <div class="services-bar mobile-slider" id="servicesSlider">
+    <div class="services-bar mobile-slider" style="background-color:#F9F7F4" id="servicesSlider">
       <div class="mobile-slider-track">
         <div class="service-item">
           <div class="svc-icon"><img src="Layer_1.png" alt=""></div>
@@ -1998,7 +2094,7 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="section bg-cream">
+    <section id="about" style="background-color:#F9F7F4" class="section bg-cream">
       <h2 class="sec-title" style="text-align:center">Donec accumsan dapibus finibus</h2>
       <div class="about-wrap">
         <div class="about-row">
@@ -2139,7 +2235,7 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section id="testimonials" class="section bg-cream section-center">
+    <section id="testimonials" style="background-color:#F9F7F4" class="section bg-cream section-center">
       <h2 style="    font-family: Inter, sans-serif; " class="sec-title">Testimonials</h2>
       <div class="test-grid mobile-slider" id="testimonialsSlider">
         <div class="mobile-slider-track">
@@ -2344,157 +2440,242 @@
             with our care teams.</div>
         </div>
       </div>
-      <div class="faq-cta"><a href="https://midlandscare.co.uk" class="btn-gold">Read More</a></div>
     </section>
     <!-- care-home-section -->
     <section class="section bg-white care-home-section">
-  <div class="care-home-wrap">
+      <div class="care-home-wrap">
 
-    <h1>Care Home in Leicester</h1>
+        <h1>Care Home in Leicester</h1>
 
-    <h2>Personalised Care for Every Resident</h2>
+        <h2>Personalised Care for Every Resident</h2>
 
-    <p>
-      In this journey, it is crucial to gather as much information as possible
-      about different care homes, their facilities, services, and the expertise
-      of their staff. Take the opportunity to visit and tour potential care
-      homes, observe the environment, engage with staff members, and interact
-      with current residents. This firsthand experience will offer valuable
-      insights and help you gauge the atmosphere and quality of care provided.
-    </p>
+        <p>
+          In this journey, it is crucial to gather as much information as possible
+          about different care homes, their facilities, services, and the expertise
+          of their staff. Take the opportunity to visit and tour potential care
+          homes, observe the environment, engage with staff members, and interact
+          with current residents. This firsthand experience will offer valuable
+          insights and help you gauge the atmosphere and quality of care provided.
+        </p>
 
-    <button class="read-more-btn" id="readMoreBtn">
-      Read More
-    </button>
+        <button class="read-more-btn" id="readMoreBtn">
+          Read More
+        </button>
 
-    <div class="read-more-content" id="readMoreContent">
+        <div class="read-more-content" id="readMoreContent">
 
-      <p>
-        Finding the right care home is one of the most important decisions you
-        will ever make, whether for yourself or a loved one. At Midlands Care,
-        we understand the significance of providing a safe, nurturing, and
-        fulfilling environment for all our residents.
-      </p>
+          <p>
+            Finding the right care home is one of the most important decisions you
+            will ever make, whether for yourself or a loved one. At Midlands Care,
+            we understand the significance of providing a safe, nurturing, and
+            fulfilling environment for all our residents.
+          </p>
 
-      <h2>Why Choose Midlands Care Home?</h2>
+          <h2>Why Choose Midlands Care Home?</h2>
 
-      <p>
-        Choosing a care home is not just about finding a place to live. It is about finding a community that supports well-being, provides outstanding care, and enhances daily life. Here is what makes Midlands Care stand out;
-      </p>
+          <p>
+            Choosing a care home is not just about finding a place to live. It is about finding a community that
+            supports well-being, provides outstanding care, and enhances daily life. Here is what makes Midlands Care
+            stand out;
+          </p>
 
-      <h2>Person-Centred Care</h2>
+          <h2>Person-Centred Care</h2>
 
-      <p>
-       We understand that every resident has unique needs, preferences, and life experiences. Our person-centred care approach ensures that every individual receives tailored support that respects their independence while providing the assistance they require. <br/>
+          <p>
+            We understand that every resident has unique needs, preferences, and life experiences. Our person-centred
+            care approach ensures that every individual receives tailored support that respects their independence while
+            providing the assistance they require. <br />
 
-From daily routines to activities and meal preferences, our care is shaped around each person’s lifestyle, helping them maintain their dignity and enjoy a high standard of living.
-      </p>
+            From daily routines to activities and meal preferences, our care is shaped around each person’s lifestyle,
+            helping them maintain their dignity and enjoy a high standard of living.
+          </p>
 
-      <h2>Highly Trained and Compassionate Staff</h2>
+          <h2>Highly Trained and Compassionate Staff</h2>
 
-      <p>
-      A care home is only as good as its caregivers. At Midlands Care, we pride ourselves on our team of highly trained professionals who provide 24/7 support. Our caregivers are not just staff. They are companions, ensuring that residents receive not only excellent care but also emotional support and companionship.  <br/>
+          <p>
+            A care home is only as good as its caregivers. At Midlands Care, we pride ourselves on our team of highly
+            trained professionals who provide 24/7 support. Our caregivers are not just staff. They are companions,
+            ensuring that residents receive not only excellent care but also emotional support and companionship. <br />
 
-We also have ongoing training and professional development to ensure that our team remains at the forefront of best practices in elderly care, dementia care in Leicester, and nursing care. This commitment guarantees that every resident receives the highest level of service tailored to their specific needs.
-      </p>
+            We also have ongoing training and professional development to ensure that our team remains at the forefront
+            of best practices in elderly care, dementia care in Leicester, and nursing care. This commitment guarantees
+            that every resident receives the highest level of service tailored to their specific needs.
+          </p>
 
-      <h2>A Warm and Homely Environment</h2>
+          <h2>A Warm and Homely Environment</h2>
 
-      <p>
-       We believe that a care home should truly feel like home. From thoughtfully designed living spaces to welcoming communal areas, our homes are created to provide comfort and security. Our residents can personalise their rooms with familiar belongings, making the transition to a care home as smooth as possible.  <br/>
+          <p>
+            We believe that a care home should truly feel like home. From thoughtfully designed living spaces to
+            welcoming communal areas, our homes are created to provide comfort and security. Our residents can
+            personalise their rooms with familiar belongings, making the transition to a care home as smooth as
+            possible. <br />
 
-The overall environment is designed to promote independence while offering the support needed to navigate daily life with ease. Whether residents wish to enjoy quiet time in a private space or engage in social activities, there is always an option that caters to their needs and preferences. We have cares homes in Leicester, care homes in Nuneaton and across the Midlands!
-      </p>
+            The overall environment is designed to promote independence while offering the support needed to navigate
+            daily life with ease. Whether residents wish to enjoy quiet time in a private space or engage in social
+            activities, there is always an option that caters to their needs and preferences. We have cares homes in
+            Leicester, care homes in Nuneaton and across the Midlands!
+          </p>
 
-      <h2>Nutritious and Delicious Meals</h2>
+          <h2>Nutritious and Delicious Meals</h2>
 
-      <p>
-        Eating well is essential for good health, especially for older adults. At Midlands Care, we offer a wide variety of delicious and nutritious meals that cater to different dietary needs and personal preferences. Our expert chefs use fresh ingredients to prepare balanced meals that not only nourish the body but also bring joy to mealtimes. <br>
+          <p>
+            Eating well is essential for good health, especially for older adults. At Midlands Care, we offer a wide
+            variety of delicious and nutritious meals that cater to different dietary needs and personal preferences.
+            Our expert chefs use fresh ingredients to prepare balanced meals that not only nourish the body but also
+            bring joy to mealtimes. <br>
 
-We understand that food is more than just sustenance. It is a source of comfort and pleasure. Mealtimes are also an opportunity for social interaction, bringing residents together to share stories and enjoy a warm, welcoming atmosphere.
-      </p>
+            We understand that food is more than just sustenance. It is a source of comfort and pleasure. Mealtimes are
+            also an opportunity for social interaction, bringing residents together to share stories and enjoy a warm,
+            welcoming atmosphere.
+          </p>
 
-      <h2>Engaging Social Activities and Events</h2>
+          <h2>Engaging Social Activities and Events</h2>
 
-      <p>
-        Staying socially active is just as important as receiving good care. That is why we offer a full schedule of activities to keep residents engaged, entertained, and stimulated. Our activities include arts and crafts, music therapy, gardening, exercise classes, and group outings.
-   <br>
-Every resident has the opportunity to participate in activities that match their interests and abilities. These activities help residents build friendships, stay mentally active, and feel part of a supportive community.
-      </p>
+          <p>
+            Staying socially active is just as important as receiving good care. That is why we offer a full schedule of
+            activities to keep residents engaged, entertained, and stimulated. Our activities include arts and crafts,
+            music therapy, gardening, exercise classes, and group outings.
+            <br>
+            Every resident has the opportunity to participate in activities that match their interests and abilities.
+            These activities help residents build friendships, stay mentally active, and feel part of a supportive
+            community.
+          </p>
 
-      <h2>Safety and Well-Being as a Priority</h2>
+          <h2>Safety and Well-Being as a Priority</h2>
 
-      <p>
-       Safety and well-being are at the heart of everything we do. Our care home is equipped with modern safety features to ensure a secure environment, and our staff is well-trained to handle medical emergencies, ensuring residents receive immediate attention whenever needed.
-<br>
-We also prioritise mental well-being by offering emotional support, companionship, and mental health resources. We understand that transitioning to a care home can be an emotional experience, and we strive to make the adjustment as smooth and reassuring as possible for both residents and their families.
-      </p>
+          <p>
+            Safety and well-being are at the heart of everything we do. Our care home is equipped with modern safety
+            features to ensure a secure environment, and our staff is well-trained to handle medical emergencies,
+            ensuring residents receive immediate attention whenever needed.
+            <br>
+            We also prioritise mental well-being by offering emotional support, companionship, and mental health
+            resources. We understand that transitioning to a care home can be an emotional experience, and we strive to
+            make the adjustment as smooth and reassuring as possible for both residents and their families.
+          </p>
 
-      <h2>A Commitment to Excellence in Care</h2>
+          <h2>A Commitment to Excellence in Care</h2>
 
-      <p>
-       At Midlands Care, we constantly strive to improve and innovate in care services. Our team stays updated with the latest advancements in healthcare, ensuring that we provide the highest quality services possible. From state-of-the-art safety features to personalised care plans, our focus is always on enhancing the lives of those we support. <br/>
+          <p>
+            At Midlands Care, we constantly strive to improve and innovate in care services. Our team stays updated with
+            the latest advancements in healthcare, ensuring that we provide the highest quality services possible. From
+            state-of-the-art safety features to personalised care plans, our focus is always on enhancing the lives of
+            those we support. <br />
 
-Choosing the right care home is a significant decision, and we understand the importance of finding a place that feels right for you or your loved one. Midlands Care is dedicated to making every resident feel valued, respected, and truly at home. With our exceptional care services, highly qualified and compassionate staff, and engaging community, we guarantee a safe and nurturing space where everyone can thrive.
-<br>
-Midlands Care is a leading care service facility dedicated to providing tailored care when you need it most and at your most vulnerable time. We are dedicated to helping your sunset years become enjoyable, respectful, and meaningful with our tailored services, skilled and experienced staff, and state-of-the-art facilities.<br>
+            Choosing the right care home is a significant decision, and we understand the importance of finding a place
+            that feels right for you or your loved one. Midlands Care is dedicated to making every resident feel valued,
+            respected, and truly at home. With our exceptional care services, highly qualified and compassionate staff,
+            and engaging community, we guarantee a safe and nurturing space where everyone can thrive.
+            <br>
+            Midlands Care is a leading care service facility dedicated to providing tailored care when you need it most
+            and at your most vulnerable time. We are dedicated to helping your sunset years become enjoyable,
+            respectful, and meaningful with our tailored services, skilled and experienced staff, and state-of-the-art
+            facilities.<br>
 
-Our care services transcend the typical medical and daily living care services and are designed to meet the various requirements of our residents, including their cultural preferences, making our care home another home away from home. We are not only focused on keeping you healthy but also on helping make every year your best year, providing comfort and happiness in all the things you love.
-      </p>
+            Our care services transcend the typical medical and daily living care services and are designed to meet the
+            various requirements of our residents, including their cultural preferences, making our care home another
+            home away from home. We are not only focused on keeping you healthy but also on helping make every year your
+            best year, providing comfort and happiness in all the things you love.
+          </p>
 
-      <h2>Care Services Tailored to Meet Your Needs</h2>
+          <h2>Care Services Tailored to Meet Your Needs</h2>
 
-   <p>
-    Midlands Care offers a wide range care services that are culturally appropriated and tailored to the health and physical needs of our residents. Our extensive range of care services includes the following:
-   </p>
-  <h2>Day Care</h2>
-<p>Do you love staying in your own home but don’t have someone around during the day to check on you? Our daycare services are perfectly suited for you. We have a purpose-built daycare home and capacity for daycare services in all our care homes to ensure you have a productive day under the watchful eye and compassionate hands of our caregivers.
-<br>
-With our day care services, you can enjoy staying in your home longer without compromising your safety and health while getting an opportunity to mingle with other residents, strike new conversations and engage in the fun activities organised in our homes.</p>
-<h2>Residential Care</h2>
-<p>Your sunset years shouldn’t be reduced to sitting by the window and watching all the fun happen outside. With our residential care services, you can rekindle that fun flame and live a fulfilling life in a comfortable and sociable home packed with activities and opportunities to meet new people and make new friends.
-<br>
-We provide you with the highest standard of quality care tailored to your needs and interests. We offload the responsibility that comes with daily living, allowing you to make the most of your time doing the things you enjoy and love.</p>
-<h2>Respite Care</h2>
-<p> Our respite care services give you a taste of our residential care services. These short stays are a great way to gauge our services and to give primary caregivers a much-needed break. Respite care may also be necessary after a short stint in a hospital that requires a period of close observation before you can get back to your normal life. <br>
+          <p>
+            Midlands Care offers a wide range care services that are culturally appropriated and tailored to the health
+            and physical needs of our residents. Our extensive range of care services includes the following:
+          </p>
+          <h2>Day Care</h2>
+          <p>Do you love staying in your own home but don’t have someone around during the day to check on you? Our
+            daycare services are perfectly suited for you. We have a purpose-built daycare home and capacity for daycare
+            services in all our care homes to ensure you have a productive day under the watchful eye and compassionate
+            hands of our caregivers.
+            <br>
+            With our day care services, you can enjoy staying in your home longer without compromising your safety and
+            health while getting an opportunity to mingle with other residents, strike new conversations and engage in
+            the fun activities organised in our homes.
+          </p>
+          <h2>Residential Care</h2>
+          <p>Your sunset years shouldn’t be reduced to sitting by the window and watching all the fun happen outside.
+            With our residential care services, you can rekindle that fun flame and live a fulfilling life in a
+            comfortable and sociable home packed with activities and opportunities to meet new people and make new
+            friends.
+            <br>
+            We provide you with the highest standard of quality care tailored to your needs and interests. We offload
+            the responsibility that comes with daily living, allowing you to make the most of your time doing the things
+            you enjoy and love.
+          </p>
+          <h2>Respite Care</h2>
+          <p> Our respite care services give you a taste of our residential care services. These short stays are a great
+            way to gauge our services and to give primary caregivers a much-needed break. Respite care may also be
+            necessary after a short stint in a hospital that requires a period of close observation before you can get
+            back to your normal life. <br>
 
-If you are considering residential care, respite care is a great place to start. It gives you a hint of the experience and environment we offer and makes it easier for you or your family to decide whether becoming a resident in our care home is the best option for you.</p>
-   <h2>Dementia Care</h2>
-   <p>We have experienced and well-trained medical professionals and caregivers dedicated to providing dementia care to residents with various symptoms of dementia, including memory loss, problem-solving, language and overall thinking. <br>
+            If you are considering residential care, respite care is a great place to start. It gives you a hint of the
+            experience and environment we offer and makes it easier for you or your family to decide whether becoming a
+            resident in our care home is the best option for you.</p>
+          <h2>Dementia Care</h2>
+          <p>We have experienced and well-trained medical professionals and caregivers dedicated to providing dementia
+            care to residents with various symptoms of dementia, including memory loss, problem-solving, language and
+            overall thinking. <br>
 
-While these symptoms start small, they can have far-reaching effects on the patient’s quality of life and abilities. Our team at Midlands Care can help ensure the resident gets the support they need even as the condition progresses so they can get the most out of life and have comfortable and responsive care that adjusts as the condition progresses.</p>
-<h2>Nursing Care</h2>
-<p>We provide nursing care for residents who require additional professional medical care in addition to assistance with their daily living duties. This type of care involves having nurses and other healthcare professionals available around the clock to meet their medical needs. <br>
+            While these symptoms start small, they can have far-reaching effects on the patient’s quality of life and
+            abilities. Our team at Midlands Care can help ensure the resident gets the support they need even as the
+            condition progresses so they can get the most out of life and have comfortable and responsive care that
+            adjusts as the condition progresses.</p>
+          <h2>Nursing Care</h2>
+          <p>We provide nursing care for residents who require additional professional medical care in addition to
+            assistance with their daily living duties. This type of care involves having nurses and other healthcare
+            professionals available around the clock to meet their medical needs. <br>
 
-Our nursing care service is tailored to meet the needs of residents with various medical conditions, some of which may be age-related. We also provide palliative care for patients requiring extra keen medical observation at all times.</p>
-<h2>What Makes Our Care Services Different? </h2>
-<p>At Midlands Care, we consider elderly care a calling. We strive to provide the best care services and set ourselves above the rest with unrivalled facilities that cater to the bespoke needs of our residents. Some of the factors that make our care homes a cut above the rest include:</p>
-<h2>Diets</h2>
-<p>Going into a care home doesn’t have to mean that you deviate from your diet preferences or as required by your healthcare provider. That is why we offer a wide range of freshly-cooked meals for our residents with the option of sumptuous vegetarian diets that promote your overall well-being and a healthy lifestyle.
- <br>
-Our meals are carefully prepared using locally sourced, fresh produce, and they are nutritious and tasty for residents who prefer a vegetarian diet.</p>
-<h2>Culturally Appropriate Care</h2>
-<p>
-  When we say we are your home away from home, we mean it in every aspect. From our carefully organised resident rooms, which make you feel at home, to our culturally appropriate care, we are focused on providing you with care services that help you maintain your cultural identity and heritage.
-<br>
-We are alert and responsive to the cultural, religious, and identity beliefs of our residents. To provide culturally appropriate care, we endeavour to ensure our care services are dignified and respectful, and we always seek consent from our residents or their families as necessary.
-</p>
-<h2>Tailored Care Services</h2>
-<p>At Midlands Care, we revere getting to know you so we can provide care services tailored to your needs. Whether it’s your preferences, such as lifestyle choices, or limitations, such as sensory impairments, learning disabilities, or physical disabilities, we take every opportunity to learn as much as we can about you so our services can help you achieve your goals and live your best life.
-<br>
-Our team of highly qualified and experienced medical professionals takes into account everything from tailored care plans to mobility, personalised emergency evacuation plans, and medication management to make your stay as comfortable and stress-free as possible.
-<br>
-Midlands Care provides a dynamic and compassionate approach to elderly care that redefines care services. We are passionate about providing person-centric care services that drive change and inspire excellence and compassion in our field. Our vision and mission are simple: to infuse joy and life into every individual who comes into our care and enhance their living</p>
-      <button class="read-more-btn bottom-btn" id="showLessBtn">
-        Show Less
-      </button>
+            Our nursing care service is tailored to meet the needs of residents with various medical conditions, some of
+            which may be age-related. We also provide palliative care for patients requiring extra keen medical
+            observation at all times.</p>
+          <h2>What Makes Our Care Services Different? </h2>
+          <p>At Midlands Care, we consider elderly care a calling. We strive to provide the best care services and set
+            ourselves above the rest with unrivalled facilities that cater to the bespoke needs of our residents. Some
+            of the factors that make our care homes a cut above the rest include:</p>
+          <h2>Diets</h2>
+          <p>Going into a care home doesn’t have to mean that you deviate from your diet preferences or as required by
+            your healthcare provider. That is why we offer a wide range of freshly-cooked meals for our residents with
+            the option of sumptuous vegetarian diets that promote your overall well-being and a healthy lifestyle.
+            <br>
+            Our meals are carefully prepared using locally sourced, fresh produce, and they are nutritious and tasty for
+            residents who prefer a vegetarian diet.
+          </p>
+          <h2>Culturally Appropriate Care</h2>
+          <p>
+            When we say we are your home away from home, we mean it in every aspect. From our carefully organised
+            resident rooms, which make you feel at home, to our culturally appropriate care, we are focused on providing
+            you with care services that help you maintain your cultural identity and heritage.
+            <br>
+            We are alert and responsive to the cultural, religious, and identity beliefs of our residents. To provide
+            culturally appropriate care, we endeavour to ensure our care services are dignified and respectful, and we
+            always seek consent from our residents or their families as necessary.
+          </p>
+          <h2>Tailored Care Services</h2>
+          <p>At Midlands Care, we revere getting to know you so we can provide care services tailored to your needs.
+            Whether it’s your preferences, such as lifestyle choices, or limitations, such as sensory impairments,
+            learning disabilities, or physical disabilities, we take every opportunity to learn as much as we can about
+            you so our services can help you achieve your goals and live your best life.
+            <br>
+            Our team of highly qualified and experienced medical professionals takes into account everything from
+            tailored care plans to mobility, personalised emergency evacuation plans, and medication management to make
+            your stay as comfortable and stress-free as possible.
+            <br>
+            Midlands Care provides a dynamic and compassionate approach to elderly care that redefines care services. We
+            are passionate about providing person-centric care services that drive change and inspire excellence and
+            compassion in our field. Our vision and mission are simple: to infuse joy and life into every individual who
+            comes into our care and enhance their living
+          </p>
+          <button class="read-more-btn bottom-btn" id="showLessBtn">
+            Show Less
+          </button>
 
-    </div>
+        </div>
 
-  </div>
-</section>
+      </div>
+    </section>
     <!-- BLOG -->
-    <section class="section bg-cream section-center">
+    <section class="section bg-cream section-center" style="background-color:#F9F7F4">
       <h2 style="    font-family: Inter, sans-serif;  " class="sec-title">Latest News</h2>
       <div class="blog-grid">
         <div class="blog-card">
@@ -2502,8 +2683,9 @@ Midlands Care provides a dynamic and compassionate approach to elderly care that
           <div class="blog-card-body">
             <h3 style="    font-family: Inter, sans-serif; ">Dementia Care Mapping Success</h3>
             <div class="blog-div"></div>
-            <p>At Midlands Care, we are proud to be going the extra mile in offering specialist Dementia Care Mapping to our residents... </p>
-           <a href="blog.html?id=1" class="rm-link">Read More  →</a>
+            <p>At Midlands Care, we are proud to be going the extra mile in offering specialist Dementia Care Mapping to
+              our residents... </p>
+            <a href="blog.html?id=1" class="rm-link">Read More →</a>
           </div>
         </div>
         <div class="blog-card">
@@ -2511,9 +2693,9 @@ Midlands Care provides a dynamic and compassionate approach to elderly care that
           <div class="blog-card-body">
             <h3 style="    font-family: Inter, sans-serif; ">The Perfect Day Project</h3>
             <div class="blog-div"></div>
-            <p>What do you think of when we ask you about your perfect day? Some people may go extreme, a trip to the Bahamas, the ride on the biggest rollercoaster or meeting a celebrity... </p>
-            <a
-              href="blog.html?id=2" class="rm-link">Read More →</a>
+            <p>What do you think of when we ask you about your perfect day? Some people may go extreme, a trip to the
+              Bahamas, the ride on the biggest rollercoaster or meeting a celebrity... </p>
+            <a href="blog.html?id=2" class="rm-link">Read More →</a>
           </div>
         </div>
         <div class="blog-card">
@@ -2521,8 +2703,8 @@ Midlands Care provides a dynamic and compassionate approach to elderly care that
           <div class="blog-card-body">
             <h3 style="    font-family: Inter, sans-serif; ">Meaningful Moments: A Trip Down Memory Lane</h3>
             <div class="blog-div"></div>
-            <p>At Midlands Care, we believe that every life story deserves to be celebrated. This month our colleagues at Portland House had the...</p><a href="blog.html?id=3"
-              class="rm-link">Read More →</a>
+            <p>At Midlands Care, we believe that every life story deserves to be celebrated. This month our colleagues
+              at Portland House had the...</p><a href="blog.html?id=3" class="rm-link">Read More →</a>
           </div>
         </div>
       </div>
@@ -2688,6 +2870,15 @@ Midlands Care provides a dynamic and compassionate approach to elderly care that
       });
     });
 
+    document.querySelectorAll(".home-card").forEach(card => {
+
+      card.addEventListener("click", function () {
+
+        document.getElementById("pop").classList.add("on");
+
+      });
+
+    });
   </script>
 
 </body>
